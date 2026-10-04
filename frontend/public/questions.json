@@ -1,0 +1,181 @@
+{
+ "version": "q5",
+ "axes": [
+  {
+   "key": "fortune",
+   "name": "Fortune",
+   "question": "How well are things going for the main characters in `passage` right now, from their own point of view? Judge the situation the passage shows, rather than the prose style.",
+   "levels": [
+    "Catastrophe or despair: a death, ruin, total defeat, or the lowest point of grief or hopelessness.",
+    "Things are going badly: setbacks, danger, loss, humiliation, or fear dominate, but it is short of the absolute bottom.",
+    "Mixed or ordinary: everyday life, neutral exposition, or good and bad in balance.",
+    "Things are going well: progress, relief, affection, or modest success; the characters are better off than before.",
+    "Triumph or joy: a wedding, a victory, a reunion, a rescue, or an unmistakable happy ending."
+   ]
+  },
+  {
+   "key": "tension",
+   "name": "Tension",
+   "question": "How much dramatic tension does `passage` create: an unresolved matter of real consequence whose outcome the reader is waiting for? Frightening and exciting scenes both count; a calm scene with a ticking clock also counts.",
+   "levels": [
+    "Zero tension: nothing at stake and nothing pending; reflection, description, or settled aftermath.",
+    "Low: a minor open matter or mild unease.",
+    "Moderate: a clear open matter with real stakes but without immediate danger or deadline.",
+    "High: immediate danger, a confrontation under way, or a deadline about to expire.",
+    "Peak: a climactic moment whose outcome is decided within the passage or hangs by a thread, including the climactic moment itself: a duel fought, a death on stage, a confession made."
+   ]
+  },
+  {
+   "key": "mystery",
+   "name": "Mystery",
+   "question": "How strongly does `passage` make the reader want an explanation: a secret kept, a puzzle posed, an event left unexplained, a stranger whose motives are hidden, or a clue whose meaning is withheld? Judge the pull toward explanation, rather than danger or excitement. Judge only what this passage itself withholds, not what the story as a whole keeps hidden.",
+   "levels": [
+    "None: nothing is withheld and no question is raised; ordinary scenes, description, jokes, and witty talk belong here even when the wider story has secrets.",
+    "Faint: one small unexplained detail that a reader barely notices.",
+    "Present: a clear open puzzle the reader notices and expects to be resolved.",
+    "Strong: the passage turns on a withheld explanation; clues accumulate and the reader is actively guessing.",
+    "Gripping: the withheld explanation is the whole point of the passage and the reader is desperate for it."
+   ]
+  },
+  {
+   "key": "humor",
+   "name": "Humor",
+   "question": "How much of `passage` is comic: jokes, wit, absurdity, farce, comic timing, or a narrator being funny on purpose? Judge intended comedy, including dark comedy, regardless of whether it succeeds.",
+   "levels": [
+    "None: zero comic intent.",
+    "A light touch: an occasional wry remark or one comic detail.",
+    "Clearly comic moments: several jokes or a comic exchange inside a mostly serious passage.",
+    "Sustained comedy: most of the passage is played for laughs.",
+    "Sustained comedy: the whole passage is a joke or a comic set piece, even when it is narrated with a straight face."
+   ]
+  },
+  {
+   "key": "warmth",
+   "name": "Warmth",
+   "question": "How much warmth does `passage` show: affection, kindness, intimacy, belonging, or tenderness between characters, or from the narrator toward a character? Warmth can be narrated as well as spoken: a narrator's stated devotion, comfort, or belonging counts as fully as an exchange between characters.",
+   "levels": [
+    "Cold or hostile: cruelty, contempt, isolation, or clinical detachment.",
+    "Cool: polite or functional interaction without affection.",
+    "Neutral or mixed: ordinary interaction, or affection mixed with friction.",
+    "Warm: clear affection, comfort, or generosity.",
+    "Deeply tender: love, forgiveness, or profound closeness is the heart of the passage."
+   ]
+  },
+  {
+   "key": "romance",
+   "name": "Romance",
+   "question": "How much romantic or sexual charge does `passage` carry between characters: attraction, flirtation, longing, courtship, a declaration, a kiss, or intimacy? Judge the charge shown, including unspoken longing, regardless of whether it is returned. The charge counts when a character speaks of, longs for, or remembers another person, even if that person is absent from the scene.",
+   "levels": [
+    "None: zero romantic or sexual charge between any characters.",
+    "A flicker: a glance, a blush, a moment of noticing.",
+    "Clear attraction: flirtation, jealousy, or longing that the reader recognises, without a declaration.",
+    "Strong: a declaration, a first kiss, a proposal, or intimacy that changes the relationship.",
+    "Consuming: the romantic or sexual charge is the whole passage; a wedding night, a reunion of lovers, or an intimate scene at length."
+   ]
+  },
+  {
+   "key": "wonder",
+   "name": "Wonder",
+   "question": "How much wonder does `passage` evoke: awe, the marvellous, the sublime, beauty that stops the breath, discovery of something vast or strange or new? Judge the sense of a world opening up, rather than fear or excitement. Wonder can live in reflection as much as in events: a meditation on the sublime, a vast sea or mountain, or a creature seen for the first time.",
+   "levels": [
+    "None: the ordinary, described plainly.",
+    "A touch: one striking image or a small moment of delight.",
+    "Present: a scene of beauty, strangeness, or discovery that the characters pause over.",
+    "Strong: awe dominates the passage; the marvellous is described at length.",
+    "Overwhelming: the sublime or the miraculous fills the passage and the characters are transformed by seeing it."
+   ]
+  },
+  {
+   "key": "dread",
+   "name": "Dread",
+   "question": "How much dread does `passage` carry: a growing sense that something bad is coming, unease, menace, horror, or foreboding? Dread is anticipation and atmosphere, distinct from the excitement of an action scene.",
+   "levels": [
+    "None: safe, calm, or cheerful.",
+    "Faint unease: a small wrong note or a hint that something is off.",
+    "Foreboding: the reader senses harm ahead; the characters may be unaware.",
+    "Menace: threat is present and pressing; horror or looming catastrophe.",
+    "Horror or doom: terror, atrocity, or inescapable catastrophe dominates."
+   ]
+  },
+  {
+   "key": "sorrow",
+   "name": "Sorrow",
+   "question": "How much sorrow does `passage` carry: grief, loss, loneliness, regret, or melancholy, in the characters or in the narrator's tone? Judge the sadness felt, rather than whether events are going badly; a happy event told with regret still carries sorrow.",
+   "levels": [
+    "None: zero sadness in the characters or the telling.",
+    "A shadow: a wistful note, a passing regret, a small loss.",
+    "Present: sadness is clearly felt but the passage carries on.",
+    "Heavy: grief or loneliness dominates the passage.",
+    "Devastating: overwhelming grief or desolation is the whole passage."
+   ]
+  },
+  {
+   "key": "pace",
+   "name": "Pace",
+   "question": "How fast does the story move in `passage`? Judge what happens and changes in the story's present, rather than sentence length or how exciting the subject is. In a play, what happens on stage counts: a fight, a death, an exit, a discovery.",
+   "levels": [
+    "Still: nothing happens in the story's present; the passage describes, reflects, explains, or sums up.",
+    "Slow: one quiet scene that ends where it began; people talk, wait, walk or eat, and little changes.",
+    "Steady: the scene moves forward at an even walk; things are said and done that change the situation, with room for talk and description around them.",
+    "Brisk: a burst of action or a run of quick turns takes up part of the passage, and the rest is build-up, talk, or aftermath.",
+    "Breathless: action or rapid turns run through almost the whole passage, one development following another with hardly a pause."
+   ]
+  }
+ ],
+ "events": [
+  {
+   "key": "reveal",
+   "name": "Reveal",
+   "question": "In `passage`, does a character or the reader learn something important that was hidden or unknown until now: a secret, an identity, a twist, or a discovery? News of an outcome that was never hidden, such as a wedding announced or a death reported, does not by itself count."
+  },
+  {
+   "key": "death",
+   "name": "Death",
+   "question": "Does a character die, or is a death reported or discovered, in `passage`? Count a death announced in dialogue or someone found dead; do not count a death that happened earlier and is only remembered or mourned."
+  },
+  {
+   "key": "arrival_departure",
+   "name": "Arrival departure",
+   "question": "Does someone arrive at, or leave, the place where the scene is set, in a way that changes the scene?"
+  },
+  {
+   "key": "location_change",
+   "name": "Location change",
+   "question": "Is `passage` set in a different place from `previous_passage_tail`, or does the setting move to a different place within `passage`? A place that is only told about, remembered, or seen from afar does not count; the action itself must move."
+  },
+  {
+   "key": "confrontation",
+   "name": "Confrontation",
+   "question": "Is there open conflict in `passage`: an argument, a fight, a threat, or a standoff between characters? An attack or a killing counts as a fight."
+  },
+  {
+   "key": "reconciliation",
+   "name": "Reconciliation",
+   "question": "Do characters make peace, forgive, apologise, or reunite in `passage`?"
+  },
+  {
+   "key": "decision",
+   "name": "Decision",
+   "question": "Does a character make up their mind in `passage`: a stated resolve, or a choice shown as being chosen, on which the story turns? A violent act or a revelation by itself does not count unless the choosing is shown."
+  },
+  {
+   "key": "betrayal",
+   "name": "Betrayal",
+   "question": "In `passage`, does a character betray someone who trusted them: a mutiny or deception plotted or carried out, a secret sold, a promise broken for gain, a lover or dependant deserted, or someone handed over to their enemies? A betrayal that comes to light or is reported in `passage` counts as well as one carried out in it."
+  },
+  {
+   "key": "injury_violence",
+   "name": "Injury violence",
+   "question": "In `passage`, is a character physically hurt, attacked, or killed, or is violence done to a body, on the page rather than reported from long ago?"
+  }
+ ],
+ "constants": {
+  "bins": 100,
+  "score_max": 4,
+  "mode_confidence": 0.6,
+  "shape_named_r": 0.55,
+  "shape_leans_r": 0.4,
+  "shape_margin": 0.1,
+  "passage_words": 800
+ }
+}

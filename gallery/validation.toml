@@ -1,0 +1,81 @@
+# Blind fortune check. The expected shape of each work was written by Claude Fable 5.1, Anthropic's
+# language model, from its plot, and committed before any of these works was analysed. None of them
+# was in the gallery when it was checked; nine of the ten joined the gallery on 2026-10-03 (Heidi
+# stayed out: its translator's death year is not known, so its public-domain standing beyond the US
+# is unconfirmed).
+#
+# Shapes: rise (low to high), fall (high to low), fall_rise (high, trough, high), rise_fall (low,
+# peak, low), rise_fall_rise (low, peak, trough, high), fall_rise_fall (high, trough, peak, low).
+# Scoring: the classified shape must equal expected_shape to count as a match. The alternative in
+# each comment is the second most likely reading and is reported separately, never counted.
+# Chosen for confidence in the plot's fortune arc first and for a spread of shapes second.
+
+[[work]]
+slug = "secret-garden"
+title = "The Secret Garden"
+author = "Frances Hodgson Burnett"
+pg_id = 113
+expected_shape = "rise"  # confidence high; alternative: none. Mary arrives orphaned and sour; the garden, Dickon and Colin recover together; her uncle returns to find Colin walking.
+
+[[work]]
+slug = "persuasion"
+title = "Persuasion"
+author = "Jane Austen"
+pg_id = 105
+expected_shape = "rise"  # confidence high; alternative: fall_rise. Anne Elliot starts faded and overlooked as her family leaves Kellynch; Wentworth's return reopens the wound and Lyme is the low point; Bath brings the slow reversal, the letter and the engagement.
+
+[[work]]
+slug = "house-of-mirth"
+title = "The House of Mirth"
+author = "Edith Wharton"
+pg_id = 284
+expected_shape = "fall"  # confidence high; alternative: rise_fall. Lily Bart begins as a society beauty with every prospect, and each turn costs her more: the Dorset cruise, the disinheritance, the millinery, the sleeping draught.
+
+[[work]]
+slug = "mayor-of-casterbridge"
+title = "The Mayor of Casterbridge"
+author = "Thomas Hardy"
+pg_id = 143
+expected_shape = "fall"  # confidence high; alternative: rise_fall. Within the first tenth Henchard is Mayor and prosperous; Farfrae's rise, the bankruptcy, Lucetta, the skimmington ride and Elizabeth-Jane's rejection take everything, and he dies alone on the heath.
+
+[[work]]
+slug = "little-princess"
+title = "A Little Princess"
+author = "Frances Hodgson Burnett"
+pg_id = 146
+expected_shape = "fall_rise"  # confidence high; alternative: rise. Sara arrives as Miss Minchin's show pupil; her father's death and ruin send her to the attic and the scullery; the Indian gentleman's kindness and the discovery restore her.
+
+[[work]]
+slug = "white-fang"
+title = "White Fang"
+author = "Jack London"
+pg_id = 910
+expected_shape = "fall_rise"  # confidence medium; alternative: rise. The wild and the Indian camp are hard, Beauty Smith's fighting pit is the trough, and Weedon Scott's rescue and California carry the second half upward.
+
+[[work]]
+slug = "great-gatsby"
+title = "The Great Gatsby"
+author = "F. Scott Fitzgerald"
+pg_id = 64317
+expected_shape = "rise_fall"  # confidence medium-high; alternative: fall. The summer opens on parties and hope, Gatsby's reunion with Daisy is the height, and the afternoon at the Plaza, Myrtle's death, the shooting and the empty funeral end it.
+
+[[work]]
+slug = "connecticut-yankee"
+title = "A Connecticut Yankee in King Arthur's Court"
+author = "Mark Twain"
+pg_id = 86
+expected_shape = "rise_fall"  # confidence medium; alternative: fall. Hank Morgan wakes in Camelot condemned to the stake; the eclipse makes him The Boss and his civilization spreads; the Interdict, the Battle of the Sand Belt and Merlin's sleep end it in ruin.
+
+[[work]]
+slug = "heidi"
+title = "Heidi"
+author = "Johanna Spyri"
+pg_id = 1448
+expected_shape = "rise_fall_rise"  # confidence medium; alternative: fall_rise. Heidi is dragged up the mountain and blooms with her grandfather; Frankfurt is exile and homesickness; the return to the Alm and Clara walking end high.
+
+[[work]]
+slug = "mill-on-the-floss"
+title = "The Mill on the Floss"
+author = "George Eliot"
+pg_id = 6688
+expected_shape = "fall_rise_fall"  # confidence low-medium; alternative: rise_fall. A prosperous childhood at the mill; the lawsuit and bankruptcy are the trough; Maggie's admired season with Lucy and Stephen is the late peak; the boat, the disgrace and the flood end at the lowest point.
