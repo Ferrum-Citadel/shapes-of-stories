@@ -1,0 +1,444 @@
+# sections and chapters say how the work must be cut; the build refuses a work that cuts
+# differently. chapters counts every chapter-level part, an opening before the first numbered
+# chapter and an epilogue included.
+
+[[work]]
+slug = "pride-and-prejudice"
+title = "Pride and Prejudice"
+author = "Jane Austen"
+pg_id = 1342
+sections = 0
+chapters = 61
+
+[[work]]
+slug = "jane-eyre"
+title = "Jane Eyre"
+author = "Charlotte Brontë"
+pg_id = 1260
+sections = 0
+chapters = 38
+expected_shape = "rise_fall_rise"  # arc of today's text (core-stories scoring); not in the 2016 corpus
+
+[[work]]
+slug = "wuthering-heights"
+title = "Wuthering Heights"
+author = "Emily Brontë"
+pg_id = 768
+sections = 0
+chapters = 34
+
+[[work]]
+slug = "great-expectations"
+title = "Great Expectations"
+author = "Charles Dickens"
+pg_id = 1400
+sections = 0
+chapters = 59
+expected_shape = "rise_fall"  # arc of today's text (core-stories scoring); not in the 2016 corpus
+
+[[work]]
+slug = "tale-of-two-cities"
+title = "A Tale of Two Cities"
+author = "Charles Dickens"
+pg_id = 98
+sections = 3
+chapters = 45
+
+[[work]]
+slug = "christmas-carol"
+title = "A Christmas Carol"
+author = "Charles Dickens"
+pg_id = 46
+sections = 0
+chapters = 5
+expected_shape = "rise_fall"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "frankenstein"
+title = "Frankenstein"
+author = "Mary Shelley"
+pg_id = 84
+sections = 0
+chapters = 28
+expected_shape = "fall_rise_fall"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "dracula"
+title = "Dracula"
+author = "Bram Stoker"
+pg_id = 345
+sections = 0
+chapters = 27
+expected_shape = "fall_rise"  # arc of today's text (core-stories scoring); not in the 2016 corpus
+
+[[work]]
+slug = "jekyll-and-hyde"
+title = "The Strange Case of Dr. Jekyll and Mr. Hyde"
+author = "Robert Louis Stevenson"
+pg_id = 43
+sections = 0
+chapters = 10
+
+[[work]]
+slug = "turn-of-the-screw"
+title = "The Turn of the Screw"
+author = "Henry James"
+pg_id = 209
+sections = 0
+chapters = 25
+expected_shape = "fall_rise_fall"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "dorian-gray"
+title = "The Picture of Dorian Gray"
+author = "Oscar Wilde"
+pg_id = 174
+sections = 0
+chapters = 20
+expected_shape = "fall"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "treasure-island"
+title = "Treasure Island"
+author = "Robert Louis Stevenson"
+pg_id = 120
+sections = 6
+chapters = 34
+expected_shape = "rise_fall_rise"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "alice"
+title = "Alice's Adventures in Wonderland"
+author = "Lewis Carroll"
+pg_id = 11
+sections = 0
+chapters = 12
+
+[[work]]
+slug = "wizard-of-oz"
+title = "The Wonderful Wizard of Oz"
+author = "L. Frank Baum"
+pg_id = 55
+sections = 0
+chapters = 24
+expected_shape = "fall_rise"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "magic-of-oz"
+title = "The Magic of Oz"
+author = "L. Frank Baum"
+pg_id = 419
+sections = 0
+chapters = 23
+expected_shape = "fall_rise"  # named in Reagan et al. 2016
+
+[[work]]
+slug = "little-women"
+title = "Little Women"
+author = "Louisa May Alcott"
+pg_id = 37106
+sections = 0
+chapters = 47
+
+[[work]]
+slug = "tom-sawyer"
+title = "The Adventures of Tom Sawyer"
+author = "Mark Twain"
+pg_id = 74
+sections = 0
+chapters = 36
+
+[[work]]
+slug = "huckleberry-finn"
+title = "Adventures of Huckleberry Finn"
+author = "Mark Twain"
+pg_id = 76
+sections = 0
+chapters = 43
+expected_shape = "rise_fall"  # arc of today's text (core-stories scoring); not in the 2016 corpus
+
+[[work]]
+slug = "call-of-the-wild"
+title = "The Call of the Wild"
+author = "Jack London"
+pg_id = 215
+sections = 0
+chapters = 7
+expected_shape = "rise"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "moby-dick"
+title = "Moby-Dick"
+author = "Herman Melville"
+pg_id = 2701
+sections = 0
+chapters = 137
+expected_shape = "fall"  # arc of today's text (core-stories scoring); not in the 2016 corpus
+
+[[work]]
+slug = "heart-of-darkness"
+title = "Heart of Darkness"
+author = "Joseph Conrad"
+pg_id = 219
+sections = 0
+chapters = 3
+expected_shape = "fall"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "war-of-the-worlds"
+title = "The War of the Worlds"
+author = "H. G. Wells"
+pg_id = 36
+sections = 2
+chapters = 27
+expected_shape = "fall_rise"  # arc of today's text (core-stories scoring); not in the 2016 corpus
+
+[[work]]
+slug = "three-men-in-a-boat"
+title = "Three Men in a Boat"
+author = "Jerome K. Jerome"
+pg_id = 308
+sections = 0
+chapters = 19
+
+[[work]]
+slug = "importance-of-being-earnest"
+title = "The Importance of Being Earnest"
+author = "Oscar Wilde"
+pg_id = 844
+sections = 0
+chapters = 3
+
+[[work]]
+slug = "hamlet"
+title = "Hamlet"
+author = "William Shakespeare"
+pg_id = 1524
+sections = 5
+chapters = 20
+expected_shape = "fall"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "romeo-and-juliet"
+title = "Romeo and Juliet"
+author = "William Shakespeare"
+pg_id = 1513
+sections = 5
+chapters = 25
+expected_shape = "fall"  # named in Reagan et al. 2016
+
+[[work]]
+slug = "winters-tale"
+title = "The Winter's Tale"
+author = "William Shakespeare"
+pg_id = 1539
+sections = 5
+chapters = 15
+expected_shape = "rise"  # named in Reagan et al. 2016
+
+[[work]]
+slug = "hound-of-the-baskervilles"
+title = "The Hound of the Baskervilles"
+author = "Arthur Conan Doyle"
+pg_id = 2852
+sections = 0
+chapters = 15
+expected_shape = "fall"  # Reagan et al. 2016 appendix mode; today's text agrees
+
+[[work]]
+slug = "crime-and-punishment"
+title = "Crime and Punishment"
+author = "Fyodor Dostoevsky (tr. Garnett)"
+pg_id = 2554
+sections = 7
+chapters = 41
+
+[[work]]
+slug = "brothers-karamazov"
+title = "The Brothers Karamazov"
+author = "Fyodor Dostoevsky (tr. Garnett)"
+pg_id = 28054
+sections = 17
+chapters = 96
+expected_shape = "fall"  # arc of today's text (core-stories scoring); not in the 2016 corpus
+
+[[work]]
+slug = "secret-garden"
+title = "The Secret Garden"
+author = "Frances Hodgson Burnett"
+pg_id = 113
+sections = 0
+chapters = 27
+expected_shape = "rise"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "persuasion"
+title = "Persuasion"
+author = "Jane Austen"
+pg_id = 105
+sections = 0
+chapters = 24
+expected_shape = "rise"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "house-of-mirth"
+title = "The House of Mirth"
+author = "Edith Wharton"
+pg_id = 284
+sections = 2
+chapters = 29
+expected_shape = "fall"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "mayor-of-casterbridge"
+title = "The Mayor of Casterbridge"
+author = "Thomas Hardy"
+pg_id = 143
+sections = 0
+chapters = 45
+expected_shape = "fall"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "little-princess"
+title = "A Little Princess"
+author = "Frances Hodgson Burnett"
+pg_id = 146
+sections = 0
+chapters = 19
+expected_shape = "fall_rise"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "white-fang"
+title = "White Fang"
+author = "Jack London"
+pg_id = 910
+sections = 5
+chapters = 25
+expected_shape = "fall_rise"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "great-gatsby"
+title = "The Great Gatsby"
+author = "F. Scott Fitzgerald"
+pg_id = 64317
+sections = 0
+chapters = 9
+expected_shape = "rise_fall"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "connecticut-yankee"
+title = "A Connecticut Yankee in King Arthur's Court"
+author = "Mark Twain"
+pg_id = 86
+sections = 0
+chapters = 45
+expected_shape = "rise_fall"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+[[work]]
+slug = "mill-on-the-floss"
+title = "The Mill on the Floss"
+author = "George Eliot"
+pg_id = 6688
+sections = 7
+chapters = 59
+expected_shape = "fall_rise_fall"  # written by Claude Fable 5.1 from the plot before the work was analyzed (blind check, 2026-09-28)
+
+# Eleven works added 2026-10-02. Where a shape is given, Claude Fable 5.1 wrote it from the plot
+# before the work was analyzed; the alternative in each comment is the second most likely reading.
+
+[[work]]
+slug = "macbeth"
+title = "Macbeth"
+author = "William Shakespeare"
+pg_id = 1533
+sections = 5
+chapters = 28
+expected_shape = "fall"  # confidence medium; alternative: rise_fall. Opens on victory and honors; the murder, Banquo, Lady Macbeth's death and Birnam Wood take everything.
+
+[[work]]
+slug = "midsummer-nights-dream"
+title = "A Midsummer Night's Dream"
+author = "William Shakespeare"
+pg_id = 1514
+sections = 5
+chapters = 9
+expected_shape = "fall_rise"  # confidence medium; alternative: rise. A wedding is planned, the lovers and the fairies fall into quarrels and enchantment in the wood, and all is mended by the three marriages.
+
+[[work]]
+slug = "odyssey"
+title = "The Odyssey"
+author = "Homer"
+pg_id = 1727
+sections = 0
+chapters = 24
+expected_shape = "rise"  # confidence medium-low; alternative: fall_rise. Ithaca is overrun and Odysseus held on Calypso's island; the wanderings are hardship told in retrospect; the return, the suitors' deaths and the reunion end it high.
+
+[[work]]
+slug = "madame-bovary"
+title = "Madame Bovary"
+author = "Gustave Flaubert"
+pg_id = 2413
+sections = 3
+chapters = 35
+expected_shape = "fall"  # confidence medium-high; alternative: rise_fall. The marriage disappoints, each affair ends worse than the last, and debt brings the arsenic and Charles's ruin.
+
+[[work]]
+slug = "anna-karenina"
+title = "Anna Karenina"
+author = "Leo Tolstoy"
+pg_id = 1399
+sections = 8
+chapters = 239
+
+[[work]]
+slug = "count-of-monte-cristo"
+title = "The Count of Monte Cristo"
+author = "Alexandre Dumas"
+pg_id = 1184
+sections = 5
+chapters = 117
+expected_shape = "fall_rise"  # confidence high; alternative: rise_fall_rise. Dantès is about to be captain and husband; the Château d'If is the trough; the treasure and the long revenge carry him up.
+
+[[work]]
+slug = "around-the-world-in-eighty-days"
+title = "Around the World in Eighty Days"
+author = "Jules Verne"
+pg_id = 103
+sections = 0
+chapters = 37
+
+[[work]]
+slug = "robinson-crusoe"
+title = "Robinson Crusoe"
+author = "Daniel Defoe"
+pg_id = 521
+sections = 0
+chapters = 20
+expected_shape = "fall_rise"  # confidence medium; alternative: rise. Early ventures end in slavery and shipwreck; the island years build slowly from despair to mastery, Friday and rescue.
+
+[[work]]
+slug = "anne-of-green-gables"
+title = "Anne of Green Gables"
+author = "L. M. Montgomery"
+pg_id = 45
+sections = 0
+chapters = 38
+expected_shape = "rise"  # confidence high; alternative: rise_fall. An unwanted orphan wins a home, friends and the Avery scholarship; Matthew's death near the end is the one fall.
+
+[[work]]
+slug = "time-machine"
+title = "The Time Machine"
+author = "H. G. Wells"
+pg_id = 35
+sections = 0
+chapters = 17
+expected_shape = "fall"  # confidence medium; alternative: fall_rise. The garden world looks like paradise; the Morlocks, Weena's loss and the dying earth strip that away before the return.
+
+[[work]]
+slug = "thirty-nine-steps"
+title = "The Thirty-Nine Steps"
+author = "John Buchan"
+pg_id = 558
+sections = 0
+chapters = 10
+expected_shape = "fall_rise"  # confidence medium; alternative: rise. A bored man is framed for murder and hunted across Scotland through the middle of the book, then believed, and the plot is stopped.
