@@ -1,0 +1,107 @@
+work_slug,start_cp,end_cp,reveal,death,arrival_departure,location_change,confrontation,reconciliation,decision,betrayal,injury_violence,source,split
+romeo-and-juliet,64166,68550,0,0,1,1,1,0,0,0,1,Act 3 Sc 1: Tybalt kills Mercutio (public summary),dev
+moby-dick,1206714,1211543,0,1,0,0,1,0,0,0,1,"ch.135: Ahab lost, the Pequod sunk (public summary) / ch.135: Ahab's last words (public summary)",test
+christmas-carol,151565,157753,0,0,1,1,0,1,0,0,0,Stave 5: Scrooge reformed (public summary) / Stave 5: Scrooge and Bob Cratchit (public summary) / Stave 5: Scrooge at his nephew's door (public summary),dev
+pride-and-prejudice,643248,647756,1,0,1,1,0,1,1,0,0,ch.58: Elizabeth accepts Darcy (public summary) / ch.58: the second proposal accepted (public summary),test
+jane-eyre,1007190,1011637,0,0,0,1,0,0,0,0,0,ch.38: the marriage (public summary),dev
+dracula,53065,59319,1,0,1,1,1,0,0,0,1,ch.2: Harker finds every door locked (public summary),test
+treasure-island,98631,104428,1,0,1,0,0,0,0,1,0,ch.11: the mutiny plot overheard (public summary),dev
+jekyll-and-hyde,17445,21916,0,0,1,1,0,0,1,0,0,ch.2: Utterson resolves to find Hyde (public summary),test
+hound-of-the-baskervilles,32065,33889,1,1,0,0,0,0,0,0,0,ch.2: Mortimer's disclosure (public summary),dev
+frankenstein,112240,116134,1,1,0,0,0,0,0,0,1,ch.7: the letter from Geneva (public summary),test
+great-expectations,0,4373,0,0,1,0,1,0,0,0,1,ch.1: the convict in the churchyard (public summary),dev
+alice,0,5053,0,0,1,1,0,0,0,0,0,ch.1: the White Rabbit and the hole (public summary),test
+war-of-the-worlds,33790,40356,1,1,1,0,1,0,0,0,1,Bk1 ch.5: the Heat-Ray at the pit (public summary),dev
+wuthering-heights,319061,324133,0,1,0,1,1,0,0,0,1,ch.16: Catherine's death (public summary),test
+little-women,26713,31350,0,0,1,1,0,0,1,0,0,ch.2: the girls give away their breakfast (public summary),dev
+tale-of-two-cities,748138,753276,0,1,1,1,0,0,0,0,1,Bk3 ch.15: Carton at the guillotine (public summary),test
+hamlet,171139,175909,1,1,1,0,1,1,0,1,1,Act 5 Sc 2: the duel (public summary) / Act 5 Sc 2: Hamlet dies; Fortinbras arrives (public summary),dev
+tom-sawyer,17516,23366,0,0,0,0,0,0,0,0,0,ch.2: whitewashing (public summary),test
+huckleberry-finn,411043,415231,0,0,1,1,0,0,1,0,0,ch.31: Huck resolves to free Jim (public summary),dev
+call-of-the-wild,62750,67345,0,1,0,0,1,0,0,0,1,ch.3: Buck kills Spitz (public summary),test
+heart-of-darkness,186299,191668,0,1,1,1,0,0,0,0,0,ch.3: Kurtz's death announced (public summary),dev
+dorian-gray,421005,426890,1,1,1,1,0,0,1,0,1,ch.20: Dorian found dead (public summary),test
+crime-and-punishment,166166,170801,0,1,1,1,1,0,0,0,1,Pt1 ch.7: the murder (public summary),dev
+turn-of-the-screw,222308,228247,1,1,0,0,1,0,0,0,0,ch.24: Miles's death (public summary),test
+hound-of-the-baskervilles,282116,285897,1,1,1,0,1,1,0,0,1,ch.14: the hound killed (public summary),dev
+wizard-of-oz,123316,127374,1,1,1,1,1,0,0,0,1,ch.12: the Wicked Witch melts (public summary),test
+three-men-in-a-boat,97713,103959,0,0,0,0,0,0,0,0,0,ch.6: the Hampton Court maze (public summary),dev
+frankenstein,83723,88950,1,0,1,1,0,0,0,0,0,ch.5: the creature lives (public summary),test
+jane-eyre,640344,645458,1,0,0,0,1,0,0,1,0,ch.26: the wedding stopped (public summary),dev
+jane-eyre,5137,10856,0,0,1,1,1,0,0,0,1,ch.1-2: the fight with John Reed (public summary),test
+pride-and-prejudice,475788,482148,1,0,0,0,0,0,0,1,0,ch.46: Lydia elopes (public summary),dev
+great-expectations,652864,656945,1,0,0,0,0,0,0,0,0,ch.39: Magwitch returns (public summary),test
+moby-dick,352492,357254,0,0,1,1,0,0,1,0,0,ch.36: Ahab nails the doubloon (public summary),dev
+treasure-island,144636,148917,1,0,1,0,0,0,0,0,0,ch.15: the man of the island (public summary),test
+dracula,472276,477942,0,1,1,1,1,1,1,0,1,ch.16: Lucy staked (public summary),dev
+alice,86438,91645,0,0,1,0,1,0,0,0,0,ch.8: the Queen's croquet ground (public summary),test
+huckleberry-finn,274633,280555,0,1,1,1,1,0,0,0,1,ch.21: Sherburn shoots Boggs (public summary),dev
+romeo-and-juliet,33493,37839,1,0,1,1,0,0,0,0,0,Act 2 Sc 2: the balcony (public summary),test
+dracula,30711,35069,0,0,1,1,0,0,0,0,0,ch.2: Harker enters the castle (public summary),dev
+heart-of-darkness,0,4953,0,0,0,0,0,0,0,0,0,ch.1: the frame on the Thames (public summary),test
+great-expectations,92053,96366,0,0,0,0,0,1,0,0,0,ch.9: Pip confesses his lies to Joe (public summary),dev
+crime-and-punishment,802067,808696,0,0,1,0,1,0,0,1,0,Pt5 ch.3: Luzhin frames Sonia (public summary),test
+heart-of-darkness,84569,87787,0,0,1,1,0,0,0,0,0,ch.2: the journey upriver (public summary),dev
+jane-eyre,955349,959995,1,0,1,1,0,0,0,0,0,ch.36: Jane returns to find Thornfield burnt (public summary),test
+tom-sawyer,108750,113264,0,1,1,0,1,0,0,0,1,ch.9: the graveyard murder; Joe frames Potter (public summary),dev
+huckleberry-finn,406406,411041,1,0,1,1,0,0,0,1,0,ch.31: the king sells Jim (public summary),test
+wizard-of-oz,94808,98959,1,0,1,1,0,0,0,0,0,ch.11: the throne room (public summary),dev
+wizard-of-oz,89618,94806,0,0,1,1,0,0,0,0,0,ch.10: arrival at the Emerald City (public summary),test
+frankenstein,116136,121007,0,1,1,1,0,0,1,0,0,ch.10: Victor goes up to the valley of Chamounix (public summary),dev
+moby-dick,1147461,1152944,1,0,1,1,0,0,0,0,0,ch.133: the boats are lowered (public summary),test
+crime-and-punishment,0,5098,0,0,0,1,0,0,0,0,0,Pt1 ch.1: Raskolnikov goes out into the street (public summary),dev
+hound-of-the-baskervilles,182497,185361,0,0,0,0,0,0,0,0,0,ch.9: Watson on the moor at night (public summary),test
+alice,136448,143479,1,0,1,1,1,0,0,0,0,ch.12: Alice wakes on the riverbank (public summary),dev
+tale-of-two-cities,87021,91482,1,0,1,0,0,1,1,0,0,Bk1 ch.6: Lucie meets her father (public summary),test
+christmas-carol,115033,119488,1,1,1,1,1,0,0,0,0,Stave 3: the two children under the robe (public summary),dev
+winters-tale,61362,65601,1,1,1,0,0,0,1,0,1,Act 3 Sc 3: the shepherd finds Perdita (public summary) / Act 3 Sc 3: Antigonus and the bear (public summary),test
+heart-of-darkness,125111,135556,1,0,0,0,0,0,0,0,0,ch.2: Kurtz's report and its postscript (public summary),dev
+dracula,438027,445884,1,0,1,1,0,0,1,0,0,ch.15: Van Helsing explains what Lucy has become (public summary),test
+jane-eyre,940356,945736,0,0,1,1,0,0,1,0,0,ch.35: Jane hears the call and resolves to go (public summary),dev
+great-expectations,990107,993569,0,0,1,0,0,1,0,0,0,ch.59: Pip and Estella leave the ruined garden (public summary),test
+romeo-and-juliet,134119,140256,1,1,1,0,0,1,0,0,0,Act 5 Sc 3: the families reconcile over the bodies (public summary) / Act 5 Sc 3: the ending (public summary),dev
+winters-tale,138020,142301,1,0,0,0,0,1,0,0,0,Act 5 Sc 3: Hermione lives (public summary),test
+christmas-carol,4927,9620,0,0,1,0,1,0,0,0,0,Stave 1: Fred visits the counting-house (public summary),dev
+jane-eyre,562874,567268,1,0,0,0,1,0,1,0,0,ch.23: Jane confronts Rochester in the orchard (public summary),dev
+tom-sawyer,69701,74255,0,0,1,1,0,0,0,0,0,ch.6: Tom meets Huck (public summary),test
+dorian-gray,159710,164270,0,0,1,1,1,0,1,1,0,ch.7: Dorian abandons Sibyl (public summary),dev
+frankenstein,167380,174812,0,0,1,1,1,0,1,1,1,ch.10: the creature accuses his maker (public summary),test
+frankenstein,305024,309624,0,0,1,1,1,0,1,0,0,ch.20: the creature's threat and departure (public summary),dev
+crime-and-punishment,1092247,1095281,1,1,1,1,0,0,1,0,0,Pt5 ch.4: the confession to Sonia (public summary),test
+crime-and-punishment,862248,869026,0,0,1,0,0,1,1,0,0,Pt5 ch.4: Sonia embraces him and sets the penance (public summary),dev
+brothers-karamazov,1923345,1930541,0,0,0,0,0,0,1,0,0,Epilogue: the boys after Ilusha's funeral (public summary),test
+brothers-karamazov,584511,593392,0,0,0,0,0,0,0,0,0,Bk5 ch.5: Ivan's poem begins (public summary),dev
+hamlet,76565,81400,0,0,1,1,1,0,1,1,0,"Act 3 Sc 1: the nunnery scene, Ophelia used as bait (public summary)",dev
+romeo-and-juliet,120023,124576,1,1,1,1,0,0,1,0,0,Act 5 Sc 1: Balthasar brings news; Romeo resolves to die (public summary),test
+treasure-island,278242,282544,1,0,1,1,1,0,0,0,0,ch.27-28: Jim walks into the pirates' camp (public summary),test
+treasure-island,23146,27290,1,0,0,0,0,0,0,0,0,ch.3: Pew delivers the black spot; Bones dies (public summary),dev
+jekyll-and-hyde,33069,37415,1,1,1,1,1,0,0,0,1,ch.4: the Carew murder (public summary),test
+jekyll-and-hyde,95484,100788,1,0,0,0,0,0,1,0,0,ch.9: Lanyon sees the transformation (public summary),dev
+dracula,309803,314330,0,0,1,1,1,0,0,0,1,ch.11: Renfield attacks Seward (public summary),test
+dracula,40163,44371,0,0,1,1,0,0,0,0,0,ch.2: the wolves howl (public summary),dev
+call-of-the-wild,20620,25885,0,1,1,1,1,0,1,0,1,ch.2: Curly killed by the huskies (public summary),test
+call-of-the-wild,108620,114526,0,1,1,1,1,0,1,0,1,ch.5: Thornton stops Hal beating Buck (public summary),dev
+huckleberry-finn,163665,167255,1,0,0,0,0,1,1,1,0,ch.15: Huck apologises to Jim after the fog (public summary),test
+wuthering-heights,149353,153975,1,0,1,0,0,0,0,0,0,ch.9: Catherine explains her choice of Edgar (public summary),dev
+three-men-in-a-boat,19198,23685,0,0,0,0,0,0,0,0,0,ch.2: planning the trip (public summary),dev
+importance-of-being-earnest,26561,31552,1,0,0,0,0,0,0,0,0,Act 1: Lady Bracknell's interview (public summary),test
+alice,45412,49930,0,0,0,0,0,0,0,0,0,ch.5: the Caterpillar (public summary),dev
+war-of-the-worlds,312434,318565,1,1,0,0,0,0,0,0,0,Bk2 ch.8: the Martians found dead (public summary),test
+war-of-the-worlds,302947,307591,0,1,0,1,0,0,0,0,0,Bk2 ch.8: dead London (public summary),dev
+hound-of-the-baskervilles,12613,17201,1,0,0,0,0,0,0,0,0,ch.2: the manuscript read (public summary),test
+hound-of-the-baskervilles,9543,12611,0,0,0,0,0,0,0,0,0,ch.1: Dr Mortimer and the skull (public summary),dev
+moby-dick,357256,363376,1,0,0,0,1,0,1,0,0,ch.36: Ahab declares the hunt; Starbuck objects (public summary),dev
+tale-of-two-cities,432722,437706,0,1,1,1,1,0,0,0,1,Bk2 ch.21: the Bastille (public summary),test
+tale-of-two-cities,753278,755781,0,0,0,0,0,0,0,0,0,Bk3 ch.15: Carton's execution (public summary),dev
+christmas-carol,25355,31719,1,0,0,0,0,0,0,0,0,Stave 1: Marley's ghost (public summary),test
+christmas-carol,9622,15893,0,0,1,0,1,0,0,0,0,Stave 1: the charity collectors (public summary),dev
+great-expectations,113703,118095,1,0,1,0,0,0,0,0,0,ch.8: Pip's first visit to Satis House (public summary),test
+great-expectations,704016,708207,1,0,0,0,0,0,0,0,0,ch.42: Magwitch's account of Compeyson (public summary),dev
+jane-eyre,170328,174132,0,1,1,1,0,0,0,0,0,ch.9: Helen Burns dies (public summary),test
+pride-and-prejudice,618417,623700,0,0,1,1,1,0,0,0,0,ch.56: Lady Catherine's visit (public summary),dev
+frankenstein,359259,363793,1,1,1,1,1,0,0,0,1,ch.23: Elizabeth found dead (public summary),test
+turn-of-the-screw,76312,80814,1,0,0,1,0,0,0,0,0,ch.6-7: the woman by the lake (public summary),dev
+turn-of-the-screw,36780,43527,0,0,1,0,0,0,0,0,0,ch.3: the figure on the tower (public summary),test
+romeo-and-juliet,22968,27963,0,0,1,1,0,0,0,0,0,Act 1 Sc 4: Mercutio's speech (public summary),test
+tom-sawyer,113266,116039,0,0,1,0,0,0,0,1,0,ch.10: Joe frames Potter (public summary),test
+treasure-island,108856,115373,1,0,1,0,1,0,1,1,0,ch.11: Silver's plot in the apple barrel (public summary),test
