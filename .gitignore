@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+.env
+gallery/cache/
+# calibration reports (`calibrate` writes here by default) are kept out of the repository
+docs/calibration/
+.vscode/
+*.code-workspace
+
+# personal instruction and settings files for coding agents
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/worktrees/

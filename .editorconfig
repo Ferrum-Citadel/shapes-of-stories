@@ -1,0 +1,28 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+[*.{ts,tsx,js,json,yml,yaml,css,html}]
+indent_style = space
+indent_size = 2
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+# CSVs keep the line endings they were written with (Python's csv module writes CRLF).
+[*.csv]
+end_of_line = unset
+
+# Generated files: questions.json by `app.cli questions-json` (1-space indent), the gallery by
+# `app.cli gallery-build` (compact, no final newline).
+[frontend/public/questions.json]
+indent_size = 1
+
+[frontend/public/gallery/**]
+indent_style = unset
+indent_size = unset
+insert_final_newline = unset
