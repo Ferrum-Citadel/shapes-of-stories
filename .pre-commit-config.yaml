@@ -1,0 +1,47 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(frontend/public/(gallery/|questions\.json)|fixtures/)
+      - id: end-of-file-fixer
+        exclude: ^(frontend/public/(gallery/|questions\.json)|fixtures/)
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: detect-private-key
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.2
+    hooks:
+      - id: ruff-check
+      - id: ruff-format
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.13.5
+    hooks:
+      - id: uv-lock
+        files: ^backend/(pyproject\.toml|uv\.lock)$
+        args: [--project, backend, --check]
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [feat, fix, refactor, perf, style, test, docs, build, chore, ci]
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: bash -c 'cd frontend && exec node_modules/.bin/prettier --check "${@#frontend/}"' --
+        language: system
+        files: ^frontend/
+        exclude: ^frontend/public/
+        types_or: [ts, tsx, javascript, json, css, html, markdown, yaml]
+      - id: prettier-docs
+        name: prettier (root markdown)
+        entry: frontend/node_modules/.bin/prettier --check --config frontend/.prettierrc.json
+        language: system
+        files: ^(docs/.*|[^/]+)\.md$
+      - id: eslint
+        name: eslint
+        entry: bash -c 'cd frontend && exec node_modules/.bin/eslint "${@#frontend/}"' --
+        language: system
+        files: ^frontend/.*\.(ts|tsx|js)$
