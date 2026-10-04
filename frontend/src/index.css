@@ -1,0 +1,363 @@
+@import "tailwindcss";
+/* A screen small either way, a phone upright or on its side, reads the chart first. */
+@custom-variant compact {
+  @media (width < 40rem) {
+    @slot;
+  }
+  @media (max-height: 30rem) {
+    @slot;
+  }
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces-Variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces-Italic-Variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --bg: #f3efe5;
+  --paper: #faf7f0;
+  --ink: #1b1917;
+  --muted: #5a5650;
+  --rule: rgba(27, 25, 23, 0.16);
+  --accent: #815e1e;
+  --accent-soft: rgba(129, 94, 30, 0.12);
+  /* How much of the first layer's color its band takes; fortune's band is --accent-soft. */
+  --band-mix: 10%;
+  --mark: var(--ink);
+  /* The sealing wax belongs to the one main action, so it never reads as data; the action is drawn in it on a tint of it. */
+  --action: #8c202b;
+  --action-tint: color-mix(in srgb, var(--action) 14%, transparent);
+  --action-tint-hover: color-mix(in srgb, var(--action) 22%, transparent);
+  --select: rgba(27, 25, 23, 0.06);
+  --warn: #8a5a00;
+  --bad: #a12a1c;
+  --shadow: rgba(29, 27, 23, 0.1);
+  --ax-warmth: #822d01;
+  --ax-humor: #636833;
+  --ax-romance: #983861;
+  --ax-wonder: #35609f;
+  --ax-dread: #503a80;
+  --ax-sorrow: #466780;
+  --ax-tension: #2b6a6b;
+  --ax-mystery: #603e1d;
+  --ax-pace: #6d6150;
+  /* The shared durations and easings, so things that do the same kind of thing move alike. */
+  --motion-leave: 120ms;
+  --motion-respond: 150ms;
+  --motion-reveal: 220ms;
+  --motion-draw: 400ms;
+  --motion-stroke: 600ms;
+  --ease-settle: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-draw: cubic-bezier(0.45, 0, 0.55, 1);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+/* Print always takes the light theme, since a browser leaves out page backgrounds when it prints. */
+@media screen {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #131211;
+    --paper: #1a1917;
+    --ink: #ece7dd;
+    --muted: #a6a097;
+    --rule: rgba(236, 231, 221, 0.16);
+    --accent: #d1b05a;
+    --accent-soft: rgba(209, 176, 90, 0.14);
+    --band-mix: 14%;
+    --action: #f4959a;
+    --action-tint: color-mix(in srgb, var(--action) 22%, transparent);
+    --action-tint-hover: color-mix(in srgb, var(--action) 30%, transparent);
+    --select: rgba(236, 231, 221, 0.07);
+    --warn: #f5c26b;
+    --bad: #ff9c8a;
+    --shadow: rgba(0, 0, 0, 0.45);
+    --ax-warmth: #d0874d;
+    --ax-humor: #cabd47;
+    --ax-romance: #c57ba6;
+    --ax-wonder: #93b1e0;
+    --ax-dread: #9f8bd3;
+    --ax-sorrow: #97bad4;
+    --ax-tension: #7fc2c0;
+    --ax-mystery: #ca996a;
+    --ax-pace: #9d9a96;
+  }
+}
+@media (prefers-contrast: more) {
+  :root,
+  :root[data-theme="dark"] {
+    --rule: color-mix(in srgb, var(--ink) 35%, transparent);
+    --muted: var(--ink);
+  }
+}
+@theme {
+  --default-transition-duration: var(--motion-respond);
+  --default-transition-timing-function: var(--ease-settle);
+}
+@layer base {
+  /* Tailwind gives a button the arrow; here it shows the hand, as a link does. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  /* Every control eases its colors the same way; a utility's own transition still wins. */
+  a,
+  button,
+  label {
+    transition:
+      color var(--motion-respond) var(--ease-settle),
+      background-color var(--motion-respond) var(--ease-settle),
+      border-color var(--motion-respond) var(--ease-settle),
+      text-decoration-color var(--motion-respond) var(--ease-settle),
+      opacity var(--motion-respond) var(--ease-settle);
+  }
+}
+/* Paper grain from one small noise tile drawn once, so no filter runs while the page paints. */
+html {
+  background: var(--bg)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.33 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23g)' opacity='.06'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+@media screen {
+  :root[data-theme="dark"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.33 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23g)' opacity='.07'/%3E%3C/svg%3E");
+    background-blend-mode: soft-light;
+  }
+}
+@media print {
+  html {
+    background-image: none;
+  }
+}
+/* The site answers a tap itself, in place of the browser's gray flash: a press dims at once and comes back through the usual ease. */
+@media (hover: none) {
+  :where(a, button, label):not(:disabled, [aria-disabled="true"], .press-own):active {
+    opacity: 0.6;
+    transition-duration: 0s;
+  }
+  /* A tile is a large target, so it dims less and the whole wall does not seem to flash. */
+  .press-soft:active {
+    opacity: 0.85;
+  }
+}
+@utility serif {
+  font-family: var(--serif);
+}
+@utility opsz-72 {
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.015em;
+}
+@utility opsz-40 {
+  font-variation-settings: "opsz" 40;
+  letter-spacing: -0.01em;
+}
+@utility opsz-14 {
+  font-variation-settings: "opsz" 14;
+}
+/* Something opened on request rises 4 px into place as it appears, a small thing quicker; it leaves at once. */
+.enter {
+  transition:
+    opacity var(--motion-reveal) var(--ease-settle),
+    translate var(--motion-reveal) var(--ease-settle);
+}
+.enter.quick {
+  transition-duration: var(--motion-respond);
+}
+@starting-style {
+  .enter {
+    opacity: 0;
+    translate: 0 4px;
+  }
+}
+/* A floating panel: a tip, a popover's card, or the chart's readout, which floats lower over the plot. */
+.panel {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+.panel.low {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+/* On the live chart the newest passage's point drops 4 px into place as it fades in, a ring in the accent spreads from it once, and the line's last stretch draws itself; nothing waits on them. */
+@keyframes live-settle {
+  from {
+    opacity: 0;
+    translate: 0 -4px;
+  }
+}
+@keyframes live-ring {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 0;
+    scale: 3.5;
+  }
+}
+@keyframes live-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+.live-settle {
+  animation: live-settle var(--motion-reveal) var(--ease-settle);
+}
+.live-ring {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: live-ring var(--motion-stroke) var(--ease-settle);
+}
+.live-draw {
+  stroke-dasharray: 1;
+  animation: live-draw var(--motion-draw) var(--ease-draw);
+}
+/* A move to another page fades the old one out quickly and lets the new one rise 6 px into place, while the bar, named apart, holds still. */
+@keyframes page-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+::view-transition-group(*) {
+  animation-duration: var(--motion-reveal);
+  animation-timing-function: var(--ease-settle);
+}
+::view-transition-old(root) {
+  animation: page-out var(--motion-leave) var(--ease-settle) both;
+}
+::view-transition-new(root) {
+  animation: page-in var(--motion-reveal) var(--ease-settle) both;
+}
+::view-transition-group(nav) {
+  animation: none;
+}
+/* The traveling title is scaled by its height, so its letters grow and shrink without stretching. */
+::view-transition-old(work-title),
+::view-transition-new(work-title) {
+  height: 100%;
+  width: auto;
+}
+/* The smoothing slider is a quiet hairline with a small dot, so it reads as a setting and not as a control asking to be used. */
+input[type="range"].smoothing {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.smoothing::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 1px;
+  background: color-mix(in srgb, var(--ink) 35%, transparent);
+}
+.smoothing::-moz-range-track {
+  height: 2px;
+  border-radius: 1px;
+  background: color-mix(in srgb, var(--ink) 35%, transparent);
+}
+.smoothing::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -5px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+.smoothing::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+@utility hairline {
+  border-top: 1px solid var(--rule);
+}
+/* Headings never leave one word on their last line, and paragraphs avoid it where they can. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+@utility label {
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+:focus-visible {
+  outline: 2px solid var(--mark);
+  outline-offset: 2px;
+}
+/* An underline field shows focus by its underline alone, thickened to 2 px of accent without moving the text, so no box is drawn around it. */
+.field {
+  transition:
+    border-color var(--motion-respond),
+    box-shadow var(--motion-respond);
+}
+.field:focus-visible {
+  outline: none;
+  border-bottom-color: var(--accent);
+  box-shadow: 0 1px 0 var(--accent);
+}
+/* WebKit draws a native select as a fixed-height pill that ignores the field's height and hairline, so a select draws its own chevron instead. */
+select {
+  appearance: none;
+  padding-right: 1.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%235a5650' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.125rem center;
+  background-size: 12px;
+}
+/* Each theme's chevron copies its --muted, since a data URI cannot read a variable. */
+@media screen {
+  :root[data-theme="dark"] select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23a6a097' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+}
+/* A phone zooms into any field set smaller than 16 px when it is focused, and stays zoomed. */
+@media (pointer: coarse) {
+  input,
+  select,
+  textarea {
+    font-size: max(16px, 1em);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

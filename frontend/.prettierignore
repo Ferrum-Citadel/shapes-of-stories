@@ -1,0 +1,9 @@
+dist
+node_modules
+public/gallery
+public/questions.json
+public/fonts
+package-lock.json
+playwright-report
+test-results
+coverage
