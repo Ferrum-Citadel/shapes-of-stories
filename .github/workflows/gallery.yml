@@ -1,0 +1,20 @@
+name: gallery
+on:
+  workflow_dispatch:
+    inputs:
+      only: { description: "space-separated slugs (empty = all)", required: false, default: "" }
+concurrency: { group: gallery, cancel-in-progress: false }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: cd backend && uv python install && uv sync --no-dev
+      - run: cd backend && uv run python -m app.cli gallery-build --mode live --list ../gallery/list.toml --out ../frontend/public/gallery --cache ../gallery/cache ${ONLY:+--only $ONLY}
+        env: { TYPESAFE_API_KEY: "${{ secrets.TYPESAFE_API_KEY }}", ONLY: "${{ inputs.only }}" }
+      - if: always()
+        run: |
+          git config user.name "gallery-bot" && git config user.email "gallery-bot@users.noreply.github.com"
+          git add frontend/public/gallery && git diff --cached --quiet || git commit -m "feat(gallery): rebuild the stored works ($(date -u +%F))" && git push
