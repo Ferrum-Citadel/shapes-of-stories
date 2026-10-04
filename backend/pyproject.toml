@@ -1,0 +1,48 @@
+[project]
+name = "shapes-of-stories"
+version = "0.1.0"
+description = "The emotional arc of a story, drawn from its text."
+requires-python = ">=3.14"
+license = "MIT"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "charset-normalizer>=3.5.1",
+    "cryptography>=50.0.1",
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "lxml>=6.1.3",
+    "markdown-it-py>=4.2.0",
+    "numpy>=2.5.3",
+    "psycopg-pool>=3.3.3",
+    "psycopg[binary]>=3.3.6",
+    "python-docx>=1.2.0",
+    "scipy>=1.18.1",
+    "sentencex>=1.0.31",
+    "srt>=3.5.3",
+    "sse-starlette>=3.4.11",
+    "uvicorn[standard]>=0.54.0",
+    "webvtt-py>=0.5.1",
+]
+
+[project.urls]
+Repository = "https://github.com/Ferrum-Citadel/shapes-of-stories"
+
+[dependency-groups]
+dev = [
+    "asgi-lifespan>=2.1.0",
+    "pytest>=8",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
