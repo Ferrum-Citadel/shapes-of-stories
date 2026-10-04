@@ -1,0 +1,342 @@
+work_slug,start_cp,end_cp,axis,level,rationale,source,split
+romeo-and-juliet,129588,130998,fortune,0,Romeo drinks the poison beside Juliet,"Shakespeare, Act 5 Sc 3",dev
+frankenstein,113061,113921,fortune,0,The father's letter: the youngest brother murdered,Shelley ch.7,test
+wuthering-heights,320668,321407,fortune,0,Heathcliff's curse after Catherine's death,E. Brontë ch.16,dev
+call-of-the-wild,11747,13128,fortune,1,Buck is clubbed into submission after capture,London ch.1,dev
+dracula,59258,60550,fortune,1,Harker realises he cannot leave the castle,Stoker ch.2,test
+wizard-of-oz,3992,4771,fortune,1,The cyclone carries Dorothy away from home,Baum ch.1,dev
+pride-and-prejudice,12,629,fortune,2,Comic exposition of the neighbourhood,Austen ch.1,dev
+three-men-in-a-boat,361,1131,fortune,2,Friends complain of imaginary ailments,Jerome ch.1,test
+moby-dick,21472,22579,fortune,2,Narrator explains why he goes to sea,Melville ch.1,dev
+little-women,27467,28076,fortune,3,Christmas morning; the girls give their breakfast away,Alcott ch.2,dev
+wizard-of-oz,12616,13234,fortune,3,Dorothy receives the shoes and a road to follow,Baum ch.2,test
+christmas-carol,53757,54398,fortune,3,The Fezziwig ball: young Scrooge among warm company,Dickens Stave 2,dev
+christmas-carol,157432,157753,fortune,4,Scrooge redeemed; the Cratchits provided for,Dickens Stave 5,dev
+pride-and-prejudice,645803,646993,fortune,4,Darcy's second proposal is accepted,Austen ch.58,test
+jane-eyre,1007218,1008139,fortune,4,Jane and Rochester married,C. Brontë ch.38,dev
+moby-dick,289695,290340,tension,0,"Cetology: taxonomy, nothing pending",Melville ch.32,dev
+heart-of-darkness,3,842,tension,0,Becalmed on the Thames; frame narration,Conrad ch.1,test
+wuthering-heights,11,679,tension,0,Lockwood's diary opening,E. Brontë ch.1,dev
+pride-and-prejudice,392,1224,tension,1,News of a new neighbour; mild anticipation,Austen ch.1,dev
+alice,11411,12118,tension,1,Alice grows; puzzlement without danger,Carroll ch.2,test
+hound-of-the-baskervilles,32,694,tension,1,Holmes and Watson deduce from a walking stick,Doyle ch.1,dev
+pride-and-prejudice,183271,184072,tension,2,Mr Collins proposes; the answer matters but no danger,Austen ch.19,dev
+great-expectations,279139,279894,tension,2,Jaggers announces Pip's fortune and conditions,Dickens ch.18,test
+jekyll-and-hyde,20008,21135,tension,2,Utterson resolves to find Hyde,Stevenson ch.2,dev
+treasure-island,103705,104421,tension,3,Jim in the apple barrel overhears the mutiny plot,Stevenson ch.11,dev
+dracula,59258,60550,tension,3,Harker trapped in the castle,Stoker ch.2,test
+war-of-the-worlds,36692,37586,tension,3,The Heat-Ray sweeps the crowd at the pit,Wells Bk1 ch.5,dev
+romeo-and-juliet,70441,71042,tension,4,Romeo kills Tybalt; Benvolio urges flight,"Shakespeare, Act 3 Sc 1",dev
+hamlet,173385,174007,tension,4,The final duel and its deaths,"Shakespeare, Act 5 Sc 2",test
+moby-dick,1208056,1209027,tension,4,The last day of the chase,Melville ch.135,dev
+jane-eyre,11,676,mystery,0,Plain domestic opening,C. Brontë ch.1,dev
+little-women,23,719,mystery,0,Sisters grumble about a poor Christmas,Alcott ch.1,test
+three-men-in-a-boat,99021,99691,mystery,0,Comic anecdote fully told,Jerome ch.6,dev
+wuthering-heights,2314,2978,mystery,1,Odd household hints at hidden history,E. Brontë ch.1,dev
+alice,628,1367,mystery,1,A rabbit with a watch: one strange detail,Carroll ch.1,test
+moby-dick,42587,43610,mystery,3,Ishmael puzzles at length over the painting and the reader guesses with him,Melville ch.3,dev
+dracula,8689,10251,mystery,2,Villagers' warnings Harker cannot explain,Stoker ch.1,dev
+treasure-island,2787,4339,mystery,2,Billy Bones's fear of a man Jim has never seen,Stevenson ch.1,test
+jekyll-and-hyde,8708,9433,mystery,2,Enfield's story of the door and the cheque,Stevenson ch.1,dev
+hound-of-the-baskervilles,182497,183732,mystery,3,"A silent figure on the tor, unexplained",Doyle ch.9,dev
+turn-of-the-screw,60796,61418,mystery,3,Mrs Grose names the dead valet,James ch.5,test
+frankenstein,324680,325728,mystery,3,Who killed William; Justine accused,Shelley ch.7,dev
+dracula,75931,76958,mystery,4,The Count crawls down the castle wall,Stoker ch.3,dev
+hound-of-the-baskervilles,33823,34491,mystery,4,The case is posed in one line,Doyle ch.2,test
+jekyll-and-hyde,20008,21135,mystery,4,Utterson's fixation on the unseen heir,Stevenson ch.2,dev
+heart-of-darkness,187737,188811,humor,0,Kurtz's last words,Conrad ch.3,dev
+frankenstein,83734,84889,humor,0,The creature animated,Shelley ch.5,test
+tale-of-two-cities,755650,755781,humor,0,Carton's sacrifice,Dickens Bk3 ch.15,dev
+great-expectations,2289,2949,humor,1,Grim convict scene with one wry touch,Dickens ch.1,dev
+dracula,33867,34696,humor,1,Stagey courtesy of the Count,Stoker ch.2,test
+moby-dick,21472,22579,humor,1,Ishmael's wry account of his moods,Melville ch.1,dev
+pride-and-prejudice,392,1224,humor,2,The Bennets spar over Netherfield,Austen ch.1,dev
+alice,87723,88335,humor,2,The Queen's absurd fury,Carroll ch.8,test
+tom-sawyer,19395,20308,humor,3,Tom sells the chore as a privilege: a comic set piece,Twain ch.2,dev
+three-men-in-a-boat,1982,2901,humor,3,The hypochondria set piece,Jerome ch.1,dev
+importance-of-being-earnest,30350,31552,humor,3,Lady Bracknell learns of Jack's origins,"Wilde, Act 1",test
+huckleberry-finn,244711,245393,humor,3,The frauds' antics on the raft,Twain ch.19,dev
+three-men-in-a-boat,219561,220385,humor,4,The pineapple tin and the boat-hook,Jerome ch.12,dev
+importance-of-being-earnest,26782,27489,humor,4,Algernon on marriage,"Wilde, Act 1",test
+alice,72485,73155,humor,4,The mad tea party,Carroll ch.7,dev
+wuthering-heights,320668,321407,warmth,0,Heathcliff's curse,E. Brontë ch.16,dev
+jane-eyre,10726,11358,warmth,0,Jane locked away by her aunt,C. Brontë ch.2,test
+call-of-the-wild,11747,13128,warmth,0,Buck beaten into obedience,London ch.1,dev
+dracula,33867,34696,warmth,1,"Formal, cold hospitality",Stoker ch.2,dev
+jekyll-and-hyde,20008,21135,warmth,1,"Professional concern, no affection",Stevenson ch.2,test
+great-expectations,279139,279894,warmth,1,Jaggers's business-like announcement,Dickens ch.18,dev
+pride-and-prejudice,392,1224,warmth,2,Marital teasing with friction,Austen ch.1,dev
+moby-dick,21472,22579,warmth,2,"Solitary narrator, neutral tone",Melville ch.1,test
+alice,628,1367,warmth,2,"Curiosity, no relationships yet",Carroll ch.1,dev
+little-women,23,719,warmth,3,Sisters together by the fire,Alcott ch.1,dev
+christmas-carol,53757,54398,warmth,3,"Generous employer, joyful company",Dickens Stave 2,test
+treasure-island,151393,152026,warmth,3,The marooned man's eager kindness to Jim,Stevenson ch.15,dev
+little-women,27467,28076,warmth,4,Mother and daughters give to the poor family,Alcott ch.2,dev
+christmas-carol,157432,157753,warmth,4,Scrooge becomes a second father to Tiny Tim,Dickens Stave 5,test
+jane-eyre,1011639,1012508,warmth,4,Perfect concord of the marriage,C. Brontë ch.38,dev
+moby-dick,289695,290340,romance,0,Cetology,Melville ch.32,dev
+war-of-the-worlds,36692,37586,romance,0,The Heat-Ray,Wells Bk1 ch.5,test
+tom-sawyer,19395,20308,romance,0,Whitewashing the fence,Twain ch.2,dev
+pride-and-prejudice,392,1224,romance,1,Mrs Bennet's marriage schemes at a distance,Austen ch.1,dev
+great-expectations,117175,117837,romance,1,Pip first sees Estella,Dickens ch.8,test
+dracula,119713,121594,romance,1,Mina's letters about Lucy's suitors,Stoker ch.5,dev
+pride-and-prejudice,330546,331327,romance,2,"Darcy's first proposal, refused",Austen ch.34,dev
+jane-eyre,562038,562872,romance,2,Jane's declaration of feeling under duress,C. Brontë ch.23,test
+wuthering-heights,149523,150353,romance,2,Catherine on Heathcliff to Nelly,E. Brontë ch.9,dev
+romeo-and-juliet,36342,37357,romance,3,The balcony scene,"Shakespeare, Act 2 Sc 2",dev
+pride-and-prejudice,645803,646993,romance,3,Darcy's second proposal accepted,Austen ch.58,test
+jane-eyre,1011639,1012508,romance,3,Marriage and its intimacy,C. Brontë ch.38,dev
+romeo-and-juliet,129588,130998,romance,4,Romeo dies kissing Juliet,"Shakespeare, Act 5 Sc 3",dev
+wuthering-heights,320668,321407,romance,4,Heathcliff's grief for Catherine,E. Brontë ch.16,test
+dorian-gray,100688,101293,romance,4,Dorian's infatuation with the actress,Wilde ch.4,dev
+pride-and-prejudice,392,1224,wonder,0,Domestic sparring,Austen ch.1,dev
+great-expectations,279139,279894,wonder,0,A lawyer's announcement,Dickens ch.18,test
+three-men-in-a-boat,1982,2901,wonder,0,Hypochondria set piece,Jerome ch.1,dev
+alice,628,1367,wonder,1,A talking rabbit noticed in passing,Carroll ch.1,dev
+heart-of-darkness,3,842,wonder,1,"The Thames at dusk, one luminous image",Conrad ch.1,test
+call-of-the-wild,11747,13128,wonder,1,Buck meets the law of club,London ch.1,dev
+wizard-of-oz,12616,13234,wonder,2,Dorothy in the strange bright land of the Munchkins,Baum ch.2,dev
+moby-dick,21472,22579,wonder,2,The sea as meditation,Melville ch.1,test
+frankenstein,83734,84889,wonder,2,Life kindled in the creature,Shelley ch.5,dev
+alice,11411,12118,wonder,3,Alice telescopes to nine feet,Carroll ch.2,dev
+dracula,75931,76958,wonder,3,The Count crawls down the wall,Stoker ch.3,test
+war-of-the-worlds,8156,8829,wonder,3,The cylinder opens,Wells Bk1 ch.4,dev
+moby-dick,405591,406340,wonder,4,Meditation on whiteness and the sublime,Melville ch.42,dev
+frankenstein,118963,119709,wonder,4,The sublime Alps,Shelley ch.10,test
+heart-of-darkness,85484,87677,wonder,4,The river as primeval world,Conrad ch.2,dev
+pride-and-prejudice,12,629,dread,0,Comic exposition,Austen ch.1,dev
+little-women,27467,28076,dread,0,Christmas breakfast,Alcott ch.2,test
+three-men-in-a-boat,361,1131,dread,0,Comic opening,Jerome ch.1,dev
+treasure-island,2787,4339,dread,1,Bones's fear communicated to Jim,Stevenson ch.1,dev
+wuthering-heights,2314,2978,dread,1,"A cold, unwelcoming house",E. Brontë ch.1,test
+jekyll-and-hyde,19,1269,dread,1,A dry lawyer; the sinister door is still to come,Stevenson ch.1,dev
+dracula,8689,10251,dread,2,Warnings before the castle,Stoker ch.1,dev
+hound-of-the-baskervilles,33823,34491,dread,2,The legend takes shape,Doyle ch.2,test
+jekyll-and-hyde,8708,9433,dread,2,A door and a man who trampled a child,Stevenson ch.1,dev
+dracula,75931,76958,dread,3,The Count crawling down the wall,Stoker ch.3,dev
+treasure-island,103705,104421,dread,3,The mutiny overheard; Jim in danger,Stevenson ch.11,test
+turn-of-the-screw,60796,61418,dread,3,The dead man walks,James ch.5,dev
+heart-of-darkness,187737,188811,dread,4,Kurtz's death,Conrad ch.3,dev
+war-of-the-worlds,36692,37586,dread,4,The Heat-Ray,Wells Bk1 ch.5,test
+frankenstein,324680,325728,dread,4,A murder and an innocent accused,Shelley ch.7,dev
+three-men-in-a-boat,1982,2901,sorrow,0,Comic hypochondria,Jerome ch.1,dev
+alice,72485,73155,sorrow,0,Nonsense tea party,Carroll ch.7,test
+importance-of-being-earnest,30350,31552,sorrow,0,Lady Bracknell's interrogation,"Wilde, Act 1",dev
+moby-dick,21472,22579,sorrow,1,"A damp, drizzly November in the soul",Melville ch.1,dev
+little-women,23,719,sorrow,1,Poverty and an absent father,Alcott ch.1,test
+wizard-of-oz,3992,4771,sorrow,1,Dorothy swept from home,Baum ch.1,dev
+jane-eyre,10726,11358,sorrow,2,The orphan punished and alone,C. Brontë ch.2,dev
+great-expectations,2289,2949,sorrow,2,The orphan at his parents' graves,Dickens ch.1,test
+dracula,59258,60550,sorrow,2,Harker's despair,Stoker ch.2,dev
+tale-of-two-cities,755650,755781,sorrow,3,Carton's death imagined,Dickens Bk3 ch.15,dev
+frankenstein,113061,113921,sorrow,3,A child murdered,Shelley ch.7,test
+heart-of-darkness,187737,188811,sorrow,3,Kurtz dies,Conrad ch.3,dev
+wuthering-heights,320668,321407,sorrow,4,Heathcliff after Catherine's death,E. Brontë ch.16,dev
+romeo-and-juliet,129588,130998,sorrow,4,Romeo's death,"Shakespeare, Act 5 Sc 3",test
+hamlet,173385,174007,sorrow,4,Hamlet dies,"Shakespeare, Act 5 Sc 2",dev
+moby-dick,289695,290340,pace,0,Cetology,Melville ch.32,dev
+moby-dick,405591,406340,pace,0,Essay chapter,Melville ch.42,test
+pride-and-prejudice,12,629,pace,0,Aphoristic exposition,Austen ch.1,dev
+wuthering-heights,11,679,pace,1,A visit recounted,E. Brontë ch.1,dev
+heart-of-darkness,3,842,pace,1,Waiting for the tide,Conrad ch.1,test
+pride-and-prejudice,392,1224,pace,1,A long conversation,Austen ch.1,dev
+great-expectations,2289,2949,pace,2,Convict seizes Pip and questions him,Dickens ch.1,dev
+dracula,33867,34696,pace,2,Arrival and supper at the castle,Stoker ch.2,test
+treasure-island,146892,147737,pace,2,Jim meets the marooned man,Stevenson ch.15,dev
+alice,87723,88335,pace,3,The croquet ground chaos,Carroll ch.8,dev
+call-of-the-wild,66495,67338,pace,3,Buck kills Spitz,London ch.3,test
+hound-of-the-baskervilles,282116,283592,pace,3,The hound shot on the moor,Doyle ch.14,dev
+romeo-and-juliet,70441,71042,pace,4,"Duel, death, and flight","Shakespeare, Act 3 Sc 1",dev
+moby-dick,1208056,1209027,pace,4,The Pequod sinks,Melville ch.135,test
+war-of-the-worlds,36692,37586,pace,4,The Heat-Ray and the panic,Wells Bk1 ch.5,dev
+hamlet,173681,174423,fortune,0,Hamlet dies; Horatio's farewell,"Shakespeare, Act 5 Sc 2",test
+crime-and-punishment,1095077,1095617,fortune,0,Raskolnikov confesses to Sonia; his life in ruins,Dostoevsky Pt5 ch.4,dev
+frankenstein,362264,363108,fortune,0,Elizabeth murdered on the wedding night,Shelley ch.23,test
+dorian-gray,162896,164270,fortune,1,Dorian discards Sibyl after her failed performance,Wilde ch.7,test
+jane-eyre,958657,959299,fortune,1,Jane learns of the fire and Rochester's injuries,C. Brontë ch.36,dev
+huckleberry-finn,407802,408311,fortune,1,Jim has been sold by the king,Twain ch.31,test
+huckleberry-finn,12,564,fortune,2,Huck introduces himself; life with the widow,Twain ch.1,test
+three-men-in-a-boat,31903,32604,fortune,2,Comic set piece; nothing at stake,Jerome ch.3,dev
+moby-dick,134965,135668,fortune,2,Queequeg's island described,Melville ch.12,test
+winters-tale,64388,65105,fortune,3,The shepherd finds the abandoned infant,"Shakespeare, Act 3 Sc 3",test
+crime-and-punishment,1130334,1130618,fortune,3,Epilogue: renewal begins,"Dostoevsky, Epilogue",dev
+great-expectations,94674,95345,fortune,3,Joe's steady kindness to Pip,Dickens ch.13,test
+pride-and-prejudice,675250,676251,fortune,4,Elizabeth engaged to Darcy,Austen ch.60,test
+call-of-the-wild,174921,175273,fortune,4,Buck runs free with the wolves,London ch.7,dev
+winters-tale,140119,140736,fortune,4,Hermione restored to life,"Shakespeare, Act 5 Sc 3",test
+three-men-in-a-boat,276353,277131,tension,0,Idle comic reflection,Jerome ch.15,test
+huckleberry-finn,12,564,tension,0,Narrative introduction,Twain ch.1,dev
+importance-of-being-earnest,11620,12688,tension,0,Drawing-room banter,"Wilde, Act 1",test
+pride-and-prejudice,14605,15272,tension,1,Darcy's snub overheard at the assembly,Austen ch.3,test
+alice,68356,68985,tension,1,The Cheshire Cat's conversation,Carroll ch.6,dev
+call-of-the-wild,17472,18346,tension,1,Buck meets the other dogs; a first wrong note,London ch.1,test
+hound-of-the-baskervilles,182497,183732,tension,2,Watson sees a stranger on the moor at night,Doyle ch.9,test
+crime-and-punishment,26,752,tension,2,"Raskolnikov slips past his landlady, plan half-formed",Dostoevsky Pt1 ch.1,dev
+jane-eyre,231257,231919,tension,2,The laugh on the third storey,C. Brontë ch.11,test
+pride-and-prejudice,622548,623700,tension,3,Lady Catherine confronts Elizabeth,Austen ch.56,test
+dracula,310128,311542,tension,3,Renfield attacks Seward,Stoker ch.11,dev
+hamlet,77311,77961,tension,3,Hamlet turns on Ophelia,"Shakespeare, Act 3 Sc 1",test
+jekyll-and-hyde,99666,100765,tension,4,Lanyon watches Hyde become Jekyll,Stevenson ch.9,test
+crime-and-punishment,1095077,1095617,tension,4,The confession to Sonia,Dostoevsky Pt5 ch.4,dev
+tale-of-two-cities,437060,437699,tension,4,The Bastille falls,Dickens Bk2 ch.21,test
+three-men-in-a-boat,276353,277131,mystery,0,Nothing hidden,Jerome ch.15,test
+importance-of-being-earnest,29376,30233,mystery,2,Jack's unknown parentage: a real puzzle raised in comedy,"Wilde, Act 1",dev
+pride-and-prejudice,14605,15272,mystery,0,A plain social snub,Austen ch.3,test
+moby-dick,134965,135668,mystery,1,An island not on any map,Melville ch.12,test
+wuthering-heights,237496,240142,mystery,1,Catherine's delirium; hints of what she wants,E. Brontë ch.12,dev
+alice,45628,46305,mystery,1,The Caterpillar's question,Carroll ch.5,test
+dorian-gray,12,1262,mystery,2,Basil will not exhibit the portrait,Wilde ch.1,test
+jane-eyre,231257,231919,mystery,2,Whose laugh is it?,C. Brontë ch.11,dev
+jekyll-and-hyde,100833,104586,mystery,2,Jekyll's statement begins to explain,Stevenson ch.10,test
+hound-of-the-baskervilles,182497,183732,mystery,3,Who is the man on the tor?,Doyle ch.9,test
+turn-of-the-screw,41811,43527,mystery,3,The figure on the tower,James ch.3,dev
+tom-sawyer,112233,113060,mystery,3,The graveyard murder and who will be blamed,Twain ch.9,test
+wuthering-heights,43207,43845,mystery,4,Lockwood's nightmare of the child at the window,E. Brontë ch.3,test
+turn-of-the-screw,78142,78833,mystery,4,The woman by the lake and Flora's silence,James ch.6-7,dev
+hamlet,30323,30929,mystery,4,The ghost beckons; nothing explained,"Shakespeare, Act 1 Sc 4",test
+frankenstein,362264,363108,humor,0,Elizabeth's murder,Shelley ch.23,test
+crime-and-punishment,1095077,1095617,humor,0,The confession,Dostoevsky Pt5 ch.4,dev
+hamlet,173681,174423,humor,0,Hamlet's death,"Shakespeare, Act 5 Sc 2",test
+moby-dick,134965,135668,humor,1,A wry biography,Melville ch.12,test
+great-expectations,94674,95345,humor,1,Joe's gentle comedy of speech,Dickens ch.13,dev
+tale-of-two-cities,64,676,humor,1,Rhetorical wit in the opening,Dickens Bk1 ch.1,test
+huckleberry-finn,12,564,humor,2,Huck's deadpan voice,Twain ch.1,test
+pride-and-prejudice,14605,15272,humor,2,The snub and Elizabeth's amusement,Austen ch.3,dev
+moby-dick,21472,22579,humor,2,Ishmael's wry account of going to sea,Melville ch.1,test
+alice,68356,68985,humor,3,The Cheshire Cat's logic,Carroll ch.6,test
+importance-of-being-earnest,11620,12688,humor,3,Algernon's epigrams,"Wilde, Act 1",dev
+three-men-in-a-boat,276353,277131,humor,3,Sustained comic reflection,Jerome ch.15,test
+three-men-in-a-boat,31903,32604,humor,4,The picture-hanging set piece,Jerome ch.3,test
+importance-of-being-earnest,29376,30233,humor,4,Lady Bracknell at full stretch,"Wilde, Act 1",dev
+importance-of-being-earnest,75772,76428,humor,4,Gwendolen and Cecily duel,"Wilde, Act 2",test
+frankenstein,306430,307303,warmth,0,The creature's threat,Shelley ch.20,test
+hamlet,77311,77961,warmth,0,Hamlet's cruelty to Ophelia,"Shakespeare, Act 3 Sc 1",dev
+dorian-gray,162896,164270,warmth,0,Dorian's contempt for Sibyl,Wilde ch.7,test
+pride-and-prejudice,14605,15272,warmth,1,Cool disdain,Austen ch.3,test
+crime-and-punishment,26,752,warmth,1,Raskolnikov's isolation,Dostoevsky Pt1 ch.1,dev
+call-of-the-wild,20620,21256,warmth,1,"A cold, brutal world",London ch.2,test
+huckleberry-finn,12,564,warmth,2,The widow's decent household,Twain ch.1,test
+treasure-island,77,1062,warmth,2,Jim begins his account,Stevenson ch.1,dev
+tale-of-two-cities,64,676,warmth,2,Panoramic opening,Dickens Bk1 ch.1,test
+hound-of-the-baskervilles,32,694,warmth,3,Holmes and Watson's companionable sparring,Doyle ch.1,test
+moby-dick,128123,128770,warmth,3,Ishmael's fondness for Queequeg,Melville ch.10,dev
+winters-tale,64388,65105,warmth,3,The shepherd takes in the child,"Shakespeare, Act 3 Sc 3",test
+great-expectations,94674,95345,warmth,4,Joe's love for Pip,Dickens ch.13,test
+tale-of-two-cities,87156,87822,warmth,4,Lucie embraces her father,Dickens Bk1 ch.6,dev
+pride-and-prejudice,675250,676251,warmth,4,Elizabeth's letter of joy,Austen ch.60,test
+three-men-in-a-boat,31903,32604,romance,0,Comic set piece,Jerome ch.3,test
+hound-of-the-baskervilles,121152,121908,romance,0,The moor described,Doyle ch.7,dev
+war-of-the-worlds,68,1399,romance,0,Cosmic opening,Wells Bk1 ch.1,test
+pride-and-prejudice,14605,15272,romance,1,"Darcy notices Elizabeth, unkindly",Austen ch.3,test
+dorian-gray,40193,43431,romance,1,Lord Henry's seduction of Dorian's vanity,Wilde ch.2,dev
+moby-dick,128123,128770,romance,1,Bosom friends in the Spouter-Inn bed,Melville ch.10,test
+tom-sawyer,26730,27497,romance,2,Tom's new infatuation,Twain ch.3,test
+wuthering-heights,237496,240142,romance,2,Catherine's longing for Heathcliff and the moors,E. Brontë ch.12,dev
+great-expectations,472023,473759,romance,2,Pip's hopeless love for Estella,Dickens ch.29,test
+pride-and-prejudice,645803,646993,romance,3,Darcy's second declaration,Austen ch.58,test
+jane-eyre,563556,564518,romance,3,Jane and Rochester before the proposal,C. Brontë ch.23,dev
+romeo-and-juliet,37677,38382,romance,3,Juliet at the window,"Shakespeare, Act 2 Sc 2",test
+wuthering-heights,320668,321407,romance,4,Heathcliff's plea at Catherine's death,E. Brontë ch.16,test
+wuthering-heights,152761,153975,romance,4,Catherine's confession of identity in love,E. Brontë ch.9,dev
+jane-eyre,943998,944627,romance,4,Rochester's voice across the distance,C. Brontë ch.35,test
+pride-and-prejudice,14605,15272,wonder,0,A ballroom snub,Austen ch.3,test
+crime-and-punishment,26,752,wonder,0,A squalid street,Dostoevsky Pt1 ch.1,dev
+importance-of-being-earnest,29376,30233,wonder,0,Drawing-room wit,"Wilde, Act 1",test
+huckleberry-finn,12,564,wonder,1,Plain narration,Twain ch.1,test
+treasure-island,77,1062,wonder,1,The inn and the stranger with the sabre cut,Stevenson ch.1,dev
+three-men-in-a-boat,276353,277131,wonder,1,Comic reflection,Jerome ch.15,test
+alice,68356,68985,wonder,2,A grinning cat that vanishes,Carroll ch.6,test
+moby-dick,134965,135668,wonder,2,An unmapped island,Melville ch.12,dev
+dracula,40163,40859,wonder,2,Wolves howling; the Count's strange delight,Stoker ch.2,test
+wizard-of-oz,89655,90871,wonder,3,First sight of the green city,Baum ch.10,test
+moby-dick,1149010,1150125,wonder,3,The white whale sighted,Melville ch.133,dev
+war-of-the-worlds,68,1399,wonder,3,Minds across the gulf of space,Wells Bk1 ch.1,test
+heart-of-darkness,209425,209829,wonder,4,The closing image of the river,Conrad ch.3,test
+winters-tale,140119,140736,wonder,4,The statue lives,"Shakespeare, Act 5 Sc 3",dev
+war-of-the-worlds,304084,304701,wonder,4,Dead London under the Martian cry,Wells Bk2 ch.8,test
+pride-and-prejudice,675250,676251,dread,0,Joy,Austen ch.60,test
+importance-of-being-earnest,75772,76428,dread,0,Comedy,"Wilde, Act 2",dev
+great-expectations,94674,95345,dread,0,Joe's kindness,Dickens ch.13,test
+tale-of-two-cities,64,676,dread,1,An ominous age announced,Dickens Bk1 ch.1,test
+treasure-island,77,1062,dread,1,The scarred stranger at the inn,Stevenson ch.1,dev
+dorian-gray,40193,43431,dread,1,A Faustian undertone,Wilde ch.2,test
+jane-eyre,231257,231919,dread,2,The laugh on the third storey,C. Brontë ch.11,test
+hound-of-the-baskervilles,182497,183732,dread,2,A watcher on the moor,Doyle ch.9,dev
+crime-and-punishment,26,752,dread,2,Raskolnikov's dread of his own plan,Dostoevsky Pt1 ch.1,test
+christmas-carol,116277,116948,dread,3,The Ghost of Christmas Yet to Come,Dickens Stave 4,test
+dracula,40163,40859,dread,3,The Count and the wolves,Stoker ch.2,dev
+frankenstein,306430,307303,dread,3,The creature's threat,Shelley ch.20,test
+jekyll-and-hyde,33092,35569,dread,4,The murder of Carew,Stevenson ch.4,test
+frankenstein,362264,363108,dread,4,Elizabeth's body,Shelley ch.23,dev
+wuthering-heights,43207,43845,dread,4,The nightmare at the window,E. Brontë ch.3,test
+importance-of-being-earnest,29376,30233,sorrow,0,Played for laughs,"Wilde, Act 1",test
+three-men-in-a-boat,31903,32604,sorrow,0,Comic set piece,Jerome ch.3,dev
+alice,68356,68985,sorrow,0,Nonsense,Carroll ch.6,test
+pride-and-prejudice,14605,15272,sorrow,1,"A slight, laughed off",Austen ch.3,test
+huckleberry-finn,12,564,sorrow,1,"Huck's dismal, decent life",Twain ch.1,dev
+moby-dick,134965,135668,sorrow,1,A wistful note,Melville ch.12,test
+jane-eyre,958657,959299,sorrow,2,News of the fire,C. Brontë ch.36,test
+crime-and-punishment,863514,864137,sorrow,2,Sonia's grief and her demand,Dostoevsky Pt5 ch.4,dev
+great-expectations,472023,473759,sorrow,2,Melancholy longing,Dickens ch.29,test
+hamlet,74527,76032,sorrow,3,Hamlet's melancholy,"Shakespeare, Act 3 Sc 1",test
+wuthering-heights,237496,240142,sorrow,3,Catherine's longing for the moors,E. Brontë ch.12,dev
+tale-of-two-cities,753714,754709,sorrow,3,Carton's last vision,Dickens Bk3 ch.15,test
+hamlet,173681,174423,sorrow,4,Hamlet dies,"Shakespeare, Act 5 Sc 2",test
+frankenstein,362264,363108,sorrow,4,Elizabeth murdered,Shelley ch.23,dev
+jane-eyre,171370,171994,sorrow,4,Helen Burns dies in Jane's arms,C. Brontë ch.9,test
+hamlet,74527,76032,pace,0,Soliloquy,"Shakespeare, Act 3 Sc 1",test
+tale-of-two-cities,64,676,pace,0,Panoramic exposition,Dickens Bk1 ch.1,dev
+heart-of-darkness,209425,209829,pace,0,Closing image,Conrad ch.3,test
+importance-of-being-earnest,11620,12688,pace,1,Conversation,"Wilde, Act 1",test
+pride-and-prejudice,14605,15272,pace,1,A conversation overheard,Austen ch.3,dev
+huckleberry-finn,12,564,pace,1,Summary narration,Twain ch.1,test
+hound-of-the-baskervilles,182497,183732,pace,2,One sighting on the moor,Doyle ch.9,test
+crime-and-punishment,863514,864137,pace,2,The confession scene unfolds,Dostoevsky Pt5 ch.4,dev
+treasure-island,77,1062,pace,2,The stranger arrives at the inn,Stevenson ch.1,test
+tom-sawyer,112233,113060,pace,3,The graveyard fight and murder,Twain ch.9,test
+jekyll-and-hyde,33092,35569,pace,3,The Carew murder,Stevenson ch.4,dev
+dracula,310128,311542,pace,3,Renfield's attack,Stoker ch.11,test
+tale-of-two-cities,437060,437699,pace,4,The Bastille stormed,Dickens Bk2 ch.21,test
+moby-dick,1149010,1150125,pace,4,The chase begins,Melville ch.133,dev
+treasure-island,278303,279229,pace,4,Jim stumbles into the pirates' camp,Stevenson ch.27-28,test
+brothers-karamazov,898196,903258,pace,0,Narrator summarises Mitya's state of mind before the catastrophe,"Dostoevsky, Bk8 ch.1; whole passage",dev
+huckleberry-finn,225690,230714,pace,0,Habitual description of days and nights on the raft; nothing happens,"Twain, ch.19; whole passage",test
+tale-of-two-cities,96014,100802,pace,0,Satirical description of Tellson's Bank and the hanging laws,"Dickens, Bk2 ch.1; whole passage",dev
+christmas-carol,75040,80638,pace,1,"One magical removal, then a long lingering description of shops","Dickens, Stave 3; whole passage",dev
+little-women,0,4560,pace,1,The sisters grumble and bicker about Christmas by the fire,"Alcott, ch.1; whole passage",test
+dorian-gray,0,4905,pace,1,"Garden scents, then Lord Henry and Basil talk about the portrait","Wilde, ch.1; whole passage",dev
+tom-sawyer,294364,300166,pace,2,Nights of watching; Tom finds Injun Joe asleep and flees; the boys talk it over,"Twain, ch.28; whole passage",dev
+wizard-of-oz,20867,26923,pace,2,"Dorothy leaves Boq's house and frees the Scarecrow, who joins her","Baum, ch.2-3; whole passage",test
+hamlet,5046,9872,pace,2,The Ghost returns and vanishes at cockcrow; the watch resolve to tell Hamlet; Claudius holds court,"Shakespeare, Act 1 Sc 1-2; whole passage",dev
+importance-of-being-earnest,54534,58978,pace,2,Jack arranges his christening; Cecily announces his 'brother'; Algernon appears,"Wilde, Act 2; whole passage",test
+pride-and-prejudice,328314,332907,pace,2,"Elizabeth rereads Jane's letters; Darcy calls, proposes, and is refused","Austen, ch.34; whole passage",dev
+jane-eyre,189127,193917,pace,2,"Jane secures leave and references, packs for Thornfield, and Bessie arrives","C. Brontë, ch.10; whole passage",test
+moby-dick,828341,833818,pace,3,"Boat dragged into the panicking herd, dodging whales, druggs thrown","Melville, ch.87; whole passage",dev
+war-of-the-worlds,201755,205812,pace,3,"Thunder Child rams and destroys a Martian, explodes; steamer flees into dusk","Wells, Bk1 ch.17; whole passage",test
+tale-of-two-cities,736867,743692,pace,3,"Miss Pross grapples with Madame Defarge; the pistol kills her; Pross flees, deafened","Dickens, Bk3 ch.14; whole passage",dev
+crime-and-punishment,175423,179813,pace,3,"Raskolnikov kills Lizaveta, washes the axe, finds the door open","Dostoevsky, Pt1 ch.7; whole passage",test
+romeo-and-juliet,124578,129551,pace,3,"Friar's letter fails; Romeo breaks into the tomb, fights and kills Paris","Shakespeare, Act 5 Sc 2-3; whole passage",dev
+call-of-the-wild,165524,170602,pace,3,"Buck finds the camp massacred, slaughters the Yeehats, then broods by the pool","London, ch.7; whole passage",test
+wizard-of-oz,57064,62110,pace,3,"Tree bridge felled, Kalidahs charge and are dashed into the gulf, a river reached","Baum, ch.7; whole passage",dev
+treasure-island,260211,266865,pace,4,Hands chases Jim with the dirk; ship grounds; Jim pinned; Hands shot and falls,"Stevenson, ch.26; whole passage",dev
+hamlet,171139,175909,pace,4,"Queen, Laertes, King and Hamlet die in quick succession; Fortinbras enters","Shakespeare, Act 5 Sc 2; whole passage",test
+war-of-the-worlds,107348,114247,pace,4,"Martian decapitated by shellfire, the boiling wave, the Heat-Ray sweeps the river","Wells, Bk1 ch.12; whole passage",dev
+treasure-island,205911,212511,pace,4,Pirates storm the stockade; hand-to-hand fight; five fall in seconds,"Stevenson, ch.21; whole passage",test
+dracula,829110,835771,pace,4,Ambush of the gypsy cart; the box flung down; the Count destroyed; Morris dies,"Stoker, ch.27; whole passage",dev
+importance-of-being-earnest,108907,116377,pace,4,"Handbag found, Jack's parentage, brotherhood and true name revealed in rapid turns; three couples embrace","Wilde, Act 3; whole passage",test
+three-men-in-a-boat,168793,173411,wonder,0,"Tent wrestled up, kettle and supper, a comic sermon on the stomach","Jerome, ch.10; whole passage",dev
+little-women,0,4560,wonder,0,Domestic grumbling about poverty and presents,"Alcott, ch.1; whole passage",test
+hound-of-the-baskervilles,0,4575,wonder,0,Holmes and Watson reconstruct a visitor from his walking stick,"Doyle, ch.1; whole passage",dev
+great-expectations,0,4373,wonder,1,Pip's tombstone fancies and the marsh vista before the convict seizes him,"Dickens, ch.1; whole passage",dev
+wuthering-heights,0,4953,wonder,1,"Lockwood arrives at the Heights: wind-bent firs, carvings, a plain farmhouse interior","E. Brontë, ch.1; whole passage",test
+little-women,41212,44577,wonder,1,The girls' rapturous amazement at the surprise feast from Mr. Laurence,"Alcott, ch.2; whole passage",dev
+pride-and-prejudice,424717,429323,wonder,2,"Elizabeth delights in Pemberley's grounds and prospects, then views the portraits","Austen, ch.43; whole passage",dev
+great-expectations,108915,113701,wonder,2,Pip crosses the deserted brewery at Satis House and first sees Miss Havisham,"Dickens, ch.8; whole passage",test
+tom-sawyer,330928,335704,wonder,2,"Tom and Becky explore stone cascades, stalactites and a hidden lake, then realise they are lost","Twain, ch.31; whole passage",dev
+huckleberry-finn,92759,97067,wonder,2,"Summer storm watched from the cave, then the flooded island","Twain, ch.9; whole passage",test
+moby-dick,833820,838516,wonder,3,The enchanted calm at the herd's heart; nursing whales seen below,"Melville, ch.87; whole passage",dev
+heart-of-darkness,87789,92043,wonder,3,Wanderers on a prehistoric earth: the immense forest and the river into the unknown,"Conrad, ch.2; whole passage",test
+brothers-karamazov,700700,705468,wonder,3,Dying Markel sees life as paradise and begs forgiveness of the birds,"Dostoevsky, Bk6 ch.2; whole passage",dev
+brothers-karamazov,891913,898194,wonder,4,Alyosha's vision of Cana and his ecstasy under the stars,"Dostoevsky, Bk7 ch.4; whole passage",dev
+war-of-the-worlds,311315,318565,wonder,4,"The narrator finds the Martians dead and sees London saved at sunrise, near to tears","Wells, Bk2 ch.8; whole passage",test
+frankenstein,161837,167378,wonder,4,"Victor among the glaciers and Mont Blanc, elevated and consoled by the sublime","Shelley, ch.10; whole passage",dev
