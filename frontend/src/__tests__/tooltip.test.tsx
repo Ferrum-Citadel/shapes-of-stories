@@ -46,7 +46,7 @@ test("names the hovered passage and its chapter, with a row per drawn layer", ()
   const [fortune, tension] = Array.from(tip.querySelectorAll("[data-row]"));
   // The mean of 1, 2 and 4 is 7/3, which fills 28 of the 48 px.
   expect(fortune.querySelector<HTMLElement>("[data-fill]")!.style.width).toBe("28px");
-  expect(fortune.querySelector("[data-fill]")).toHaveStyle({ background: "var(--accent)" });
+  expect(fortune.querySelector<HTMLElement>("[data-fill]")!.style.background).toBe("var(--accent)");
   expect(tension.querySelector("[data-bar]")).toBeInTheDocument();
   expect(tension.querySelector("[data-fill]")).toBeNull();
 });

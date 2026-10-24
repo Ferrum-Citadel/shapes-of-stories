@@ -78,7 +78,9 @@ test("the progress rule fills in the accent with the passages done, and the stat
   const { rerender } = render(liveRun(0));
   const fill = screen.getByRole("progressbar", { name: "Analysis progress" })
     .firstElementChild as HTMLElement;
-  expect(fill).toHaveStyle({ width: "0%", background: "var(--accent)" });
+  // The accent is read from the inline style: jsdom computes the shorthand without its variable.
+  expect(fill).toHaveStyle({ width: "0%" });
+  expect(fill.style.background).toBe("var(--accent)");
   rerender(liveRun(3));
   expect(fill).toHaveStyle({ width: "25%" });
   // Before the pace is known no time is offered.
