@@ -1,6 +1,6 @@
 [project]
 name = "shapes-of-stories"
-version = "0.1.0"
+version = "1.0.0"
 description = "The emotional arc of a story, drawn from its text."
 requires-python = ">=3.14"
 license = "MIT"
