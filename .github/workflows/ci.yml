@@ -22,7 +22,7 @@ jobs:
         shell: bash
         env: { TEST_DATABASE_URL: postgresql://sos:sos@localhost:5432/sos, JEV_MODE: synthetic }
       - run: '! grep -qE "skipped|SKIPPED" pytest.out'
-      - uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5.5.5
+      - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
         with: { use_oidc: true, fail_ci_if_error: false, flags: backend, files: backend/coverage.xml }
   frontend:
     runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
       - run: npm run lint
       - run: npx vitest run --coverage.enabled --coverage.provider=v8 --coverage.reporter=lcov
       - run: npm run build
-      - uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5.5.5
+      - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
         with: { use_oidc: true, fail_ci_if_error: false, flags: frontend, files: frontend/coverage/lcov.info }
   e2e:
     runs-on: ubuntu-latest
