@@ -2,12 +2,12 @@
 
 <p align="center"><strong>The emotional arc of a story, drawn from its text.</strong></p>
 
+<p align="center"><a href="https://stories.ferrum-citadel.dev"><strong>Try it at stories.ferrum-citadel.dev</strong></a></p>
+
 <p align="center">
   <a href="https://github.com/Ferrum-Citadel/shapes-of-stories/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Ferrum-Citadel/shapes-of-stories/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://scorecard.dev/viewer/?uri=github.com/Ferrum-Citadel/shapes-of-stories"><img alt="OpenSSF Scorecard" src="https://api.scorecard.dev/projects/github.com/Ferrum-Citadel/shapes-of-stories/badge"></a>
-  <a href="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories" > 
- <img src="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories/graph/badge.svg?token=1JLFV7C411"/> 
- </a>
+  <a href="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories"><img alt="Coverage" src="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories/graph/badge.svg?token=1JLFV7C411"></a>
   <a href="LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 </p>
 
@@ -23,7 +23,7 @@ Hand it a novel, a screenplay or a transcript. It reads the whole thing about 80
 - **Wander the gallery**: fifty public-domain works, from _A Midsummer Night's Dream_ to _The Count of Monte Cristo_, scored and waiting.
 - **Keep an analysis**, share it by link, or save it as a poster.
 
-The gallery is free to browse. Your own texts need your own [TypeSafe](https://typesafe.ai) key.
+The gallery at [stories.ferrum-citadel.dev](https://stories.ferrum-citadel.dev) is free to browse. Your own texts need your own [TypeSafe](https://typesafe.ai) key.
 
 ## Why I built it
 
@@ -57,6 +57,8 @@ Measured on my calibration runs: a few hundred passages from Project Gutenberg t
 - Texts under about 8,000 words are cut into smaller passages so a curve has enough points; the scores are less certain there.
 
 ## Run it
+
+The hosted copy at [stories.ferrum-citadel.dev](https://stories.ferrum-citadel.dev) runs the image below. To run your own:
 
 ```bash
 cp .env.example .env   # SERVER_SECRET: 32 random bytes, base64. JEV_MODE=live
