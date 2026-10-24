@@ -22,3 +22,10 @@ updates:
     directory: /
     schedule: { interval: weekly }
     commit-message: { prefix: build }
+    # The Node line follows frontend/.nvmrc and the Python line backend/.python-version, so only
+    # their digests move on their own.
+    ignore:
+      - dependency-name: node
+        update-types: [version-update:semver-major, version-update:semver-minor]
+      - dependency-name: python
+        update-types: [version-update:semver-major, version-update:semver-minor]
