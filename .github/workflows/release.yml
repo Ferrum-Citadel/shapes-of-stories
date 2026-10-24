@@ -6,6 +6,7 @@ jobs:
   image:
     if: ${{ !github.event.release.prerelease }}
     runs-on: ubuntu-latest
+    environment: production
     permissions: { contents: read, packages: write }
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -26,3 +27,17 @@ jobs:
             org.opencontainers.image.licenses=MIT
           provenance: mode=max
           sbom: true
+      # Coolify sits behind Cloudflare Access: the service token passes Access, the Coolify token may only deploy.
+      # curl -f would count Access's 302 login redirect as success, so require a 200.
+      - name: Deploy on Coolify
+        env:
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+          CF_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+          CF_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+        run: |
+          code=$(curl -sS -m 60 -o resp.json -w '%{http_code}' \
+            -H "CF-Access-Client-Id: $CF_ID" -H "CF-Access-Client-Secret: $CF_SECRET" \
+            -H "Authorization: Bearer $COOLIFY_TOKEN" \
+            "https://coolify.ferrum-citadel.dev/api/v1/deploy?uuid=y3bjw6fiopqlb4xaeb5mweqj&force=false")
+          cat resp.json; echo
+          [ "$code" = 200 ] || { echo "deploy request failed: HTTP $code" >&2; exit 1; }
