@@ -108,9 +108,18 @@ def test_book_subtitle_is_not_an_opening_and_a_conclusion_is_a_chapter():
 def test_fewer_than_three_headings_falls_back_to_deciles():
     # 20 equal-length paragraphs so each decile boundary lands exactly on a paragraph
     # start and every decile survives.
-    raw = "\n\n".join([big(10) for _ in range(20)])
+    raw = "\n\n".join([big(400) for _ in range(20)])
     _, chapters, source = resolve_chapters(parse(raw.encode(), "b.txt"))
     assert source == "deciles" and len(chapters) == 10 and chapters[0].title == "0–10%"
+
+
+def test_a_short_text_is_cut_into_as_many_parts_as_it_has_passages_worth():
+    for paragraphs, words, parts in ((4, 9, 1), (4, 250, 2), (20, 400, 10)):
+        raw = "\n\n".join([big(words)] * paragraphs)
+        _, chapters, source = resolve_chapters(parse(raw.encode(), "b.txt"))
+        assert source == "deciles" and len(chapters) == parts
+    s = build_structure(parse("\n\n".join([big(9)] * 4).encode(), "b.txt"))
+    assert [c.title for c in s.chapters] == ["0–100%"] and len(s.beats) == 1
 
 
 def test_decile_chapters_start_on_paragraphs():

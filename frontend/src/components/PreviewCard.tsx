@@ -28,11 +28,11 @@ export default function PreviewCard({
     ["Words", preview.word_count.toLocaleString()],
     ["Chapters detected", String(preview.chapters.length)],
     ["Skipped parts", preview.stripped.map((s) => `${s.label} (${s.word_count} words)`).join(", ")],
-    ["Kind", `${preview.preset} (${preview.format.toUpperCase()})`],
+    ["Read as", `${preview.preset} (${preview.format.toUpperCase()})`],
     ["Language", preview.english ? "English" : "Not English"],
   ];
   const { beats, cost_usd, seconds } = preview.estimate;
-  const estimate = `About ${beats} passages, roughly $${cost_usd.toFixed(2)} of your TypeSafe usage, about ${duration(seconds)}.`;
+  const estimate = `About ${beats} ${beats === 1 ? "passage" : "passages"}, roughly $${cost_usd.toFixed(2)} of your TypeSafe usage, about ${duration(seconds)}.`;
   return (
     <div className="rounded-lg border border-[var(--rule)] bg-[var(--paper)] p-4">
       <h2 className="serif opsz-40 text-[22px] font-medium leading-tight">

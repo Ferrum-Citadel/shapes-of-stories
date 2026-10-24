@@ -2,7 +2,7 @@ import { act, cleanup, render, screen, waitFor, within } from "@testing-library/
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes } from "react-router";
 import Import from "../pages/Import";
-import { ApiError, errorMessage } from "../api/client";
+import { ApiError, ERRORS, errorMessage } from "../api/client";
 import { deleteLocal, listLocal, loadLocal, saveLocal } from "../lib/local";
 import { version } from "../../public/questions.json";
 import type { Preview } from "../types";
@@ -155,7 +155,7 @@ test("the preview card lists author, words, chapters, skipped parts, kind and la
     ["Words", (90000).toLocaleString()],
     ["Chapters detected", "2"],
     ["Skipped parts", "front matter (50 words)"],
-    ["Kind", "prose (TXT)"],
+    ["Read as", "prose (TXT)"],
     ["Language", "English"],
   ]);
 });
@@ -165,7 +165,7 @@ test("the preview card leaves out rows that have no value", async () => {
   await previewOf();
   await screen.findByText(/About 112 passages/);
   const terms = [...document.querySelectorAll("dt")].map((d) => d.textContent);
-  expect(terms).toEqual(["Words", "Chapters detected", "Kind", "Language"]);
+  expect(terms).toEqual(["Words", "Chapters detected", "Read as", "Language"]);
 });
 
 // Whether the empty region stays in the accessibility tree is CSS, which only a browser can show.
@@ -680,4 +680,34 @@ test("Test key sits in the key field's row, right of the input, and its answer s
   // A changed key drops the answer about the old one.
   await userEvent.type(field, "9");
   expect(screen.queryByText("Key works (…5678)")).toBeNull();
+});
+
+test("the file picker names the formats the server reads", () => {
+  render(
+    <MemoryRouter>
+      <Import />
+    </MemoryRouter>,
+  );
+  expect(document.querySelector('input[type="file"]')).toHaveAttribute(
+    "accept",
+    ".txt,.text,.md,.markdown,.epub,.docx,.fountain,.srt,.vtt",
+  );
+});
+
+test("after a refused input, Analyze waits for a new one", async () => {
+  mockApi({ preview: () => json({ error: "unsupported_format", detail: {} }, 415) });
+  render(
+    <MemoryRouter>
+      <Import />
+    </MemoryRouter>,
+  );
+  await userEvent.type(screen.getByLabelText(/paste text/i), "some text");
+  await userEvent.type(screen.getByLabelText("TypeSafe API key"), "sk-12345678");
+  const analyze = screen.getByRole("button", { name: /^analyze$/i });
+  expect(analyze).toBeEnabled();
+  await userEvent.click(screen.getByRole("button", { name: "Preview" }));
+  expect(await screen.findByRole("alert")).toHaveTextContent(ERRORS.unsupported_format);
+  expect(analyze).toBeDisabled();
+  await userEvent.type(screen.getByLabelText(/paste text/i), " more");
+  expect(analyze).toBeEnabled();
 });

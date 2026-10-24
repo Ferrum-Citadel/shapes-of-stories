@@ -84,11 +84,13 @@ export default function WorkActions({
             Share link
           </button>
         )}
-        <button className={BUTTON} onClick={() => onExport(false)}>
-          <ActionIcon name="download" />
-          Export results
-        </button>
-        {hasText && (
+        {analysis && (
+          <button className={BUTTON} onClick={() => onExport(false)}>
+            <ActionIcon name="download" />
+            Export results
+          </button>
+        )}
+        {analysis && hasText && (
           <button className={BUTTON} onClick={() => onExport(true)}>
             <ActionIcon name="download" />
             Export with text

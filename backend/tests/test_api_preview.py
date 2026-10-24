@@ -63,3 +63,12 @@ async def test_at_most_two_uploads_parse_at_once(monkeypatch):
     monkeypatch.setattr(upload, "prepare", slow_prepare)
     await asyncio.gather(*(upload.prepare_upload(b"x", "x.txt") for _ in range(5)))
     assert peak == 2
+
+
+async def test_a_paste_has_no_title_and_an_uploaded_file_lends_its_name(client):
+    r = await client.post("/api/preview", content=NOVEL)
+    assert r.status_code == 200 and r.json()["title"] is None
+    r = await client.post(
+        "/api/preview", content=NOVEL, headers={"X-Filename": "great_expectations.txt"}
+    )
+    assert r.status_code == 200 and r.json()["title"] == "Great Expectations"

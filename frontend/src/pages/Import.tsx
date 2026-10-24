@@ -95,7 +95,8 @@ export default function Import() {
       // The server stamps the same set on a new work; the refresh corrects it after a restart.
       question_set_version: QUESTION_SET,
     }).catch(() => {});
-    void nav(`/works/${created.work_id}`, { viewTransition: true });
+    // The form is spent once the run starts, so Back returns to the page before it.
+    void nav(`/works/${created.work_id}`, { replace: true, viewTransition: true });
   };
   // A preview failure belongs under the input; once a preview exists, the failure came from the analysis and belongs under the key.
   const errorLine = err && (
@@ -132,6 +133,7 @@ export default function Import() {
           <input
             type="file"
             className="sr-only"
+            accept=".txt,.text,.md,.markdown,.epub,.docx,.fountain,.srt,.vtt"
             onChange={(e) => {
               pick(e.target.files?.[0] ?? null);
               e.target.value = "";
@@ -177,7 +179,8 @@ export default function Import() {
         <button
           type="button"
           className="min-h-[40px] rounded-md bg-[var(--ink)] px-4 py-2 text-[var(--bg)] hover:opacity-90 disabled:opacity-40"
-          disabled={!input || !plausibleKey(key) || busy}
+          // An input the preview refused would be refused again.
+          disabled={!input || !plausibleKey(key) || busy || (!!err && !preview)}
           onClick={() => void analyze()}
         >
           Analyze

@@ -5,6 +5,7 @@ from dataclasses import replace
 
 from markdown_it import MarkdownIt
 
+from app import config
 from app.core.ingest.boilerplate import (
     _CHAPTER_WORD,
     _CONTENTS,
@@ -90,6 +91,46 @@ def _title_like(words: list[str]) -> bool:
     Pictures of Whales", "A churchyard; in it a Monument belonging to the Capulets."), not a
     sentence of prose ("The rain had not stopped for three days, and Ellen was...")."""
     return 4 * sum(w.lstrip("\"'(")[:1].isupper() for w in words) >= len(words)
+
+
+_BY_LINE = re.compile(r"by\s+(\S.*)", re.I)
+_SMALL_WORDS = frozenset("a an and at by for in of on or the to".split())
+
+
+def title_case(s: str) -> str:
+    """ "THE LAMP AT NINE" and "my novel draft" both read as a title, small words kept low after
+    the first; a mixed-case line keeps its own capitals."""
+    words = (s.lower() if s.isupper() else s).split()
+    return " ".join(
+        w if i and w in _SMALL_WORDS else w[:1].upper() + w[1:] for i, w in enumerate(words)
+    )
+
+
+def title_page(body: str) -> tuple[str, str | None, str | None]:
+    """A manuscript's own title page: a short title-like first line, taken as the title only when
+    a "by <author>" line or the first chapter heading follows it, so a one-line opening of prose
+    stays prose. The lines taken are cut from the body."""
+    paras = body.lstrip().split("\n\n", 2)
+    if len(paras) < 3:
+        return body, None, None
+    title, second, rest = (x.strip() for x in paras)
+    words = title.split()
+    if (
+        "\n" in title
+        or not 0 < len(words) <= 8
+        or len(title) > config.CHAPTER_TITLE_MAX
+        or not title[0].isalpha()
+        or _keyword_level(title)
+        or _ROMAN_LINE.fullmatch(title)
+        or re.search(r'[.!?,;:"]', _IN_TITLE.sub("", title))
+        or not (title.isupper() or _title_like(words))
+    ):
+        return body, None, None
+    if by := _BY_LINE.fullmatch(second):
+        return rest, title_case(title), by[1].strip()
+    if _keyword_level(second.split("\n")[0]):
+        return f"{second}\n\n{rest}", title_case(title), None
+    return body, None, None
 
 
 def _numbered_run(text: str, headings: list[Heading], numbered: list[Heading]) -> list[Heading]:
@@ -305,6 +346,8 @@ def _strip_captions(body: str) -> str:
 def parse_txt(data: bytes) -> Parsed:
     raw = decode(data)
     body, stripped, title, author = strip_gutenberg(raw)
+    if title is None:
+        body, title, author = title_page(body)
     words = word_count(body)
     body = _strip_captions(body)
     if removed := words - word_count(body):

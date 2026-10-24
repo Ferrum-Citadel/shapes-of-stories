@@ -6,7 +6,7 @@ import { importAndSave, listLocal, loadLocal } from "../lib/local";
 import Comparison, { type Side } from "../components/Comparison";
 import WorkPicker, { type Choice } from "../components/WorkPicker";
 import type { Axis, GalleryEntry, GalleryWork, LocalWork } from "../types";
-import { pageTitle, quiet } from "../lib/ui";
+import { pageTitle, quiet, textButton } from "../lib/ui";
 async function load(ref: string): Promise<Side | null> {
   const [kind, id] = ref.split(":");
   if (kind === "gallery") {
@@ -28,7 +28,7 @@ async function load(ref: string): Promise<Side | null> {
     const local = await loadLocal(id).catch(() => undefined);
     if (local?.analysis)
       return {
-        label: local.title ?? id,
+        label: local.title ?? "Untitled",
         analysis: local.analysis,
         structure: local.structure,
         questionSet: local.question_set_version,
@@ -36,7 +36,7 @@ async function load(ref: string): Promise<Side | null> {
     const w = await api.getWork(id);
     return w.analysis
       ? {
-          label: w.title ?? id,
+          label: w.title ?? "Untitled",
           analysis: w.analysis,
           structure: w.structure,
           questionSet: w.question_set_version,
@@ -78,7 +78,7 @@ const ownChoice = (m: LocalWork): Choice[] =>
     ? [
         {
           ref: `work:${m.id}`,
-          title: m.title ?? m.id,
+          title: m.title ?? "Untitled",
           author: m.author ?? "",
           note: m.analysis.archetype.caption || "your work",
         },
@@ -115,6 +115,14 @@ export default function Compare() {
     // A pick changes the page's address, not the page, so the view stays where it is.
     setParams(p, { preventScrollReset: true });
   };
+  const swap = () => {
+    const p = new URLSearchParams(params);
+    const [a0, b0] = [p.get("a"), p.get("b")];
+    if (a0) p.set("b", a0);
+    if (b0) p.set("a", b0);
+    setParams(p, { preventScrollReset: true });
+  };
+  const clear = () => setParams(new URLSearchParams(), { preventScrollReset: true });
   const openFile = (k: "a" | "b") => (f: File) => {
     setFileErr(null);
     importAndSave(f).then(
@@ -152,6 +160,18 @@ export default function Compare() {
             </div>
           ))}
         </div>
+        {(params.get("a") || params.get("b")) && (
+          <div className="flex gap-4 text-[13px]">
+            {params.get("a") && params.get("b") && (
+              <button type="button" className={textButton} onClick={swap}>
+                Swap sides
+              </button>
+            )}
+            <button type="button" className={textButton} onClick={clear}>
+              Clear
+            </button>
+          </div>
+        )}
         {fileErr && (
           <p role="alert" className="text-[13px] text-[var(--bad)]">
             {fileErr}

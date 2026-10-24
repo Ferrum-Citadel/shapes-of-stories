@@ -7,8 +7,9 @@ import { metaOf } from "../lib/definitions";
 import PageNotice from "../components/PageNotice";
 import { INDEX, forgetFile, galleryFile, isSlug, keptFile, neighbors } from "../lib/gallery";
 import { useLeaveMark } from "../lib/motion";
-import { quiet } from "../lib/ui";
+import { boxButton, quiet } from "../lib/ui";
 import PosterButton from "../poster/Poster";
+import { ActionIcon } from "../components/icons";
 
 export default function GalleryWork() {
   const { slug = "" } = useParams();
@@ -64,11 +65,14 @@ export default function GalleryWork() {
         room={room}
         metaActions={(axes) => (
           <PosterButton
+            className={`${boxButton} inline-flex items-center gap-1.5`}
             title={w.work.title}
             subtitle={w.work.author}
             analysis={w.analysis}
             axes={axes}
-          />
+          >
+            <ActionIcon name="image" />
+          </PosterButton>
         )}
       />
       <p className="text-[14px] text-[var(--muted)]">

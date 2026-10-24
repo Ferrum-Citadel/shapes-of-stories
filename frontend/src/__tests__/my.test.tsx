@@ -225,3 +225,23 @@ test("removing a copy kept only in this browser asks first", async () => {
   expect(ask).toHaveBeenCalledOnce();
   expect(await loadLocal("k1")).toBeDefined();
 });
+
+test("a copy without a title is called Untitled, never shown by its id", async () => {
+  vi.spyOn(api, "myWorks").mockResolvedValue({ works: [] });
+  await saveLocal({
+    id: "CxOx5bFYWG8",
+    title: null,
+    author: null,
+    text: "",
+    structure: fakeStructure(),
+    analysis: fakeAnalysis(),
+    answers: {},
+    savedAt: 1,
+  });
+  show();
+  expect(await screen.findByRole("link", { name: "Untitled" })).toHaveAttribute(
+    "href",
+    "/works/CxOx5bFYWG8",
+  );
+  expect(screen.queryByText("CxOx5bFYWG8")).toBeNull();
+});

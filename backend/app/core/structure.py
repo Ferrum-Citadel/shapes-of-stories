@@ -59,12 +59,16 @@ def resolve_chapters(p: Parsed) -> tuple[list[Section], list[Chapter], str]:
         None,
     )
     if chapter_level is None:
+        # A tenth of a short text would hold no whole passage, so it is cut into fewer parts.
+        parts = min(10, max(1, words_in(p.text, 0, n) // config.SHORT_BEAT_TARGET))
         starts = [a for a, _ in paragraph_spans(p.text)]
         bounds = (
-            [0] + [next((a for a in starts if a >= n * i // 10), n) for i in range(1, 10)] + [n]
+            [0]
+            + [next((a for a in starts if a >= n * i // parts), n) for i in range(1, parts)]
+            + [n]
         )
         chapters = []
-        for i in range(10):
+        for i in range(parts):
             if bounds[i] < bounds[i + 1]:
                 start, end = bounds[i], bounds[i + 1]
                 chapters.append(

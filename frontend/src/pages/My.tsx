@@ -56,10 +56,10 @@ function DeviceTile({ l, onRemove }: { l: LocalWork; onRemove: () => void }) {
     <li className={`${TILE} border-dashed`}>
       {l.analysis ? (
         <Link to={`/works/${l.id}`} className={TITLE} viewTransition>
-          {l.title ?? l.id}
+          {l.title ?? "Untitled"}
         </Link>
       ) : (
-        <div className="serif opsz-14 text-[15px] leading-tight">{l.title ?? l.id}</div>
+        <div className="serif opsz-14 text-[15px] leading-tight">{l.title ?? "Untitled"}</div>
       )}
       {l.author && <div className={META}>{l.author}</div>}
       <div className="mt-auto flex items-center justify-between gap-2 pt-1">

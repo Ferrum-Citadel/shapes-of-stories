@@ -258,3 +258,12 @@ def test_wrapped_paragraph_does_not_repeat_the_next_chapter_number():
         "Chapter 4",
         "P",
     )[1] == ["Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4"]
+
+
+def test_a_title_page_is_not_an_opening_chapter():
+    body = "\n\n".join(
+        ["THE LAMP AT NINE", "by A. Writer"] + [f"CHAPTER {i}\n\n{big(60)}" for i in (1, 2, 3)]
+    )
+    pr = prepare(body.encode(), "u.txt", enforce_english=False)
+    assert (pr.parsed.title, pr.parsed.author) == ("The Lamp at Nine", "A. Writer")
+    assert [c.title for c in pr.structure.chapters] == ["CHAPTER 1", "CHAPTER 2", "CHAPTER 3"]

@@ -228,6 +228,8 @@ test("while running, the frame shows the axes and the progress sentence", async 
   expect(screen.getByText(/beginning/)).toBeInTheDocument();
   expect(screen.getByText("good")).toBeInTheDocument();
   expect(screen.getByRole("button", { name: /cancel/i })).toBeInTheDocument();
+  // Nothing to export until there are results.
+  expect(screen.queryByRole("button", { name: /export/i })).toBeNull();
   const bar = screen.getByRole("progressbar", { name: "Analysis progress" });
   expect([
     bar.getAttribute("aria-valuenow"),
@@ -564,4 +566,46 @@ test("a work still running offers neither Keep nor Share", async () => {
   expect(await screen.findByText("Private.")).toBeInTheDocument();
   expect(screen.queryByRole("button", { name: "Keep" })).toBeNull();
   expect(screen.queryByRole("button", { name: "Share link" })).toBeNull();
+});
+
+test("a canceled run says how far it got and Start again deletes it on the way to a fresh one", async () => {
+  vi.stubGlobal(
+    "EventSource",
+    class {
+      addEventListener() {}
+      close() {}
+    },
+  );
+  const methods: string[] = [];
+  serve({
+    "/api/works/w1": (init) => {
+      methods.push(init?.method ?? "GET");
+      return init?.method === "DELETE"
+        ? new Response(null, { status: 204 })
+        : json(
+            fakeWork({
+              kept: false,
+              state: "cancelled",
+              done: 3,
+              total: 12,
+              analysis: null,
+              structure: fakeStructure(12, 3),
+            }),
+          );
+    },
+  });
+  renderAt(
+    <Routes>
+      <Route path="/works/:id" element={<Work />} />
+      <Route path="/import" element={<h1>Analyze a book</h1>} />
+    </Routes>,
+    "/works/w1",
+  );
+  expect(
+    await screen.findByText("Canceled after 3 of 12 passages; nothing was kept."),
+  ).toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: /export|cancel/i })).toBeNull();
+  await userEvent.click(screen.getByRole("button", { name: "Start again" }));
+  expect(await screen.findByRole("heading", { name: "Analyze a book" })).toBeInTheDocument();
+  expect(methods).toContain("DELETE");
 });

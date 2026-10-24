@@ -35,6 +35,14 @@ export default function Work() {
     setOpErr(null);
     run().catch((e: unknown) => setOpErr(errorMessage(e)));
   };
+  // Deleting takes the server's copy and this browser's, then moves on; a browser that refuses is let go.
+  const forget = (to: string) =>
+    act(() =>
+      api
+        .remove(id)
+        .then(() => deleteLocal(id).catch(() => {}))
+        .then(() => nav(to, { viewTransition: true })),
+    );
   // A results file opened here, or a work the server has since let go, can still be read from this browser's copy.
   const l = w.local;
   if (w.error === "not_found" && !w.work && l?.analysis)
@@ -133,6 +141,22 @@ export default function Work() {
       </div>
     </div>
   );
+  // A canceled run keeps nothing a reader could use, so the way on is a fresh run.
+  const canceled = w.state === "cancelled" && (
+    <div
+      role="status"
+      className="rounded-lg border border-[var(--rule)] bg-[var(--paper)] p-3 text-[13px] space-y-2"
+    >
+      <p>
+        {w.done
+          ? `Canceled after ${w.done} of ${w.total} passages; nothing was kept.`
+          : "Canceled before the first passage was scored; nothing was kept."}
+      </p>
+      <button className={textButton} onClick={() => forget("/import")}>
+        Start again
+      </button>
+    </div>
+  );
   // The poster draws the layers selected in the viewer.
   const actions = (axes: Axis[]) => (
     <div className="space-y-3">
@@ -142,6 +166,7 @@ export default function Work() {
         </p>
       )}
       {failure}
+      {canceled}
       <WorkActions
         work={work}
         analysis={analysis}
@@ -151,13 +176,7 @@ export default function Work() {
         onKept={w.refresh}
         onExport={exportAs}
         onDelete={() => {
-          if (confirm("Delete this analysis? This cannot be undone."))
-            act(() =>
-              api
-                .remove(id)
-                .then(() => deleteLocal(id).catch(() => {}))
-                .then(() => nav("/my", { viewTransition: true })),
-            );
+          if (confirm("Delete this analysis? This cannot be undone.")) forget("/my");
         }}
       />
     </div>

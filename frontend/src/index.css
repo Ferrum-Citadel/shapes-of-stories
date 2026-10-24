@@ -361,3 +361,8 @@ select {
     animation: none !important;
   }
 }
+
+/* A modal dialog holds the page behind it still. */
+body:has(dialog[open]) {
+  overflow: hidden;
+}

@@ -12,7 +12,10 @@ export function Titled({ name, i }: { name: string; i: 0 | 1 }) {
   return (
     <span className="flex min-w-0 items-center gap-2">
       <Swatch {...SIDES[i]} />
-      <span title={name} className="serif opsz-14 truncate text-[15px] font-medium">
+      <span
+        title={name}
+        className="serif opsz-14 line-clamp-2 text-[15px] font-medium leading-tight"
+      >
         {name}
       </span>
     </span>

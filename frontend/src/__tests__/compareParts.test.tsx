@@ -90,7 +90,7 @@ function expectTitledColumns(table: HTMLElement) {
   for (const h of heads) {
     expect(h).toHaveAttribute("scope", "col");
     expect(h.querySelector("line")).not.toBeNull();
-    expect(h.querySelector(".truncate")).toHaveAttribute("title", h.textContent);
+    expect(h.querySelector(".line-clamp-2")).toHaveAttribute("title", h.textContent);
   }
   const lines = heads.map((h) => h.querySelector("line")!);
   expect(lines.map((l) => l.getAttribute("stroke-dasharray"))).toEqual([null, "6 3"]);

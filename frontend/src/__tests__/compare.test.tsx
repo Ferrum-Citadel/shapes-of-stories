@@ -419,3 +419,15 @@ test("a good results file this browser will not store is not called a bad file",
     "The file is fine, but this browser would not store it.",
   );
 });
+
+test("Swap sides trades the two works, and Clear empties both", async () => {
+  open("/compare?a=gallery:x&b=gallery:y");
+  await loaded();
+  await userEvent.click(screen.getByRole("button", { name: "Swap sides" }));
+  await waitFor(() => expect([param("a"), param("b")]).toEqual(["gallery:y", "gallery:x"]));
+  expect(await loaded()).toHaveAccessibleName("Fortune: Work Y versus Work X");
+  await userEvent.click(screen.getByRole("button", { name: "Clear" }));
+  await waitFor(() => expect([param("a"), param("b")]).toEqual([null, null]));
+  expect(screen.getByText(/Pick two works to compare/)).toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: /Swap sides|Clear/ })).toBeNull();
+});

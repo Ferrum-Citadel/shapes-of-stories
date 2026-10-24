@@ -267,6 +267,8 @@ test("a gallery work offers its poster beside the compare link", async () => {
   at("/gallery/a");
   const compare = await screen.findByRole("link", { name: /Compare with another work/ });
   const poster = within(compare.parentElement!).getByRole("button", { name: "Poster" });
+  // The same boxed control, with its icon, as on a reader's own work.
+  expect(poster.querySelector("svg")).not.toBeNull();
   await userEvent.click(poster);
   const dialog = screen.getByRole("dialog", { name: "Poster" });
   expect(await previewSvg(dialog)).toContain(">Work A</text>");

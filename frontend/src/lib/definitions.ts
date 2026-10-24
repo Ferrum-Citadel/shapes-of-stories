@@ -237,7 +237,7 @@ export const HOW_TO_READ = [
 
 export const REPO_URL = "https://github.com/Ferrum-Citadel/shapes-of-stories";
 export const COLOPHON =
-  "A side project about the shapes of stories, after Vonnegut. About two cents a novel, nothing of yours kept.";
+  "A side project about the shapes of stories, after Vonnegut. About two cents a novel, and your text is never kept.";
 
 export function shapeSentence(a: Archetype): string {
   if (a.state === "none" || !a.shape)
@@ -278,7 +278,7 @@ export function metaOf(
   return [
     `${w.word_count.toLocaleString()} words`,
     `${s.chapters.length} chapters`,
-    `analyzed in ${s.beats.length} passages`,
+    `analyzed in ${s.beats.length} ${s.beats.length === 1 ? "passage" : "passages"}`,
     own && w.cost_usd != null && `about $${w.cost_usd.toFixed(2)}`,
     s.preset === "transcript" && "transcript",
     w.kind_warning && `${w.kind_warning.replaceAll("_", " ")}: arcs may be less meaningful`,

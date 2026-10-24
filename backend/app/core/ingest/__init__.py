@@ -10,7 +10,7 @@ from app.core.ingest.epub import parse_epub
 from app.core.ingest.fountain import parse_fountain
 from app.core.ingest.model import Cue, Format, Heading, Parsed, Stripped  # re-export
 from app.core.ingest.subtitles import parse_srt, parse_vtt
-from app.core.ingest.txt import parse_markdown, parse_txt
+from app.core.ingest.txt import parse_markdown, parse_txt, title_case
 
 __all__ = ["Cue", "Format", "Heading", "Parsed", "Stripped", "detect_format", "parse"]
 
@@ -64,7 +64,16 @@ def parse(data: bytes, filename: str | None = None) -> Parsed:
     parsed = _PARSERS[fmt](data)
     if not parsed.text.strip():
         raise IngestError("empty_text")
+    if parsed.title is None and filename:
+        parsed.title = filename_title(filename)
     return parsed
+
+
+def filename_title(filename: str) -> str | None:
+    """ "my-novel_draft2.txt" reads "My Novel Draft2"; a name without a letter gives nothing."""
+    stem = filename.rsplit(".", 1)[0] if "." in filename else filename
+    stem = re.sub(r"[\s_\-.]+", " ", stem).strip()
+    return title_case(stem) if re.search(r"[A-Za-z]", stem) else None
 
 
 _PARSERS: dict[str, Callable[[bytes], Parsed]] = {

@@ -13,7 +13,7 @@ from app.core.prepare import Prepared, prepare
 _PARSING = asyncio.Semaphore(2)
 
 
-async def read_upload(request: Request) -> tuple[bytes, str]:
+async def read_upload(request: Request) -> tuple[bytes, str | None]:
     """Raw request body, never multipart, so no user text is ever spooled to disk. Filename
     comes from the optional X-Filename header (basename only, capped at 255 chars)."""
     cl = request.headers.get("content-length")
@@ -29,10 +29,10 @@ async def read_upload(request: Request) -> tuple[bytes, str]:
     if not data:
         raise ApiError(400, "missing_input")
     raw_name = request.headers.get("x-filename")
-    filename = os.path.basename(raw_name)[:255] if raw_name else "paste.txt"
+    filename = os.path.basename(raw_name)[:255] if raw_name else None
     return data, filename
 
 
-async def prepare_upload(data: bytes, filename: str, **kwargs) -> Prepared:
+async def prepare_upload(data: bytes, filename: str | None, **kwargs) -> Prepared:
     async with _PARSING:
         return await run_in_threadpool(prepare, data, filename, **kwargs)

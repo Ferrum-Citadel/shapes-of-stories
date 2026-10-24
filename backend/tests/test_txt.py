@@ -474,3 +474,35 @@ def test_caption_text_that_is_no_chapter_heading_goes_with_the_caption(caption):
 def test_a_story_line_opening_like_the_older_gutenberg_closing_line_is_kept():
     body = BODY + "\n\nEnd of Project Gutenberg's influence on me, I thought, and went on.\n\nMore."
     assert parse(gutenberg_wrap(body).encode(), "book.txt").text.endswith("went on.\n\nMore.")
+
+
+PROSE = " ".join(["The rain had not stopped for three days, and Ellen was tired of it."] * 12)
+
+
+def test_a_title_page_gives_the_title_and_author_and_is_cut_from_the_text():
+    body = f"THE LAMP AT NINE\n\nby A. Writer\n\nCHAPTER 1\n\n{PROSE}\n\nCHAPTER 2\n\n{PROSE}"
+    p = parse(body.encode(), "u.txt")
+    assert (p.title, p.author) == ("The Lamp at Nine", "A. Writer")
+    assert p.text.startswith("CHAPTER 1")
+    assert [h.title for h in p.headings] == ["CHAPTER 1", "CHAPTER 2"]
+    p = parse(f"The Lamp at Nine\n\nBy A. Writer\n\nChapter 1\n\n{PROSE}".encode(), "u.txt")
+    assert (p.title, p.author) == ("The Lamp at Nine", "A. Writer")
+
+
+def test_a_title_line_without_a_by_line_counts_only_over_a_chapter_heading():
+    p = parse(f"THE LAMP AT NINE\n\nCHAPTER 1\n\n{PROSE}\n\nCHAPTER 2\n\n{PROSE}".encode(), None)
+    assert (p.title, p.author) == ("The Lamp at Nine", None) and p.text.startswith("CHAPTER 1")
+    # A short titled line over prose stays in the text, as a heading candidate.
+    p = parse(f"The Storm\n\n{PROSE}\n\n{PROSE}".encode(), None)
+    assert p.title is None and p.text.startswith("The Storm")
+    assert [h.title for h in p.headings] == ["The Storm"]
+    # A Gutenberg header's title wins, and its text is left as it is.
+    p = parse(gutenberg_wrap(f"THE LAMP AT NINE\n\nby Someone Else\n\n{BODY}").encode(), "b.txt")
+    assert (p.title, p.author) == ("Test Book", "A. Writer") and p.text.startswith("THE LAMP")
+
+
+def test_a_file_name_is_the_title_of_last_resort():
+    assert parse(PROSE.encode(), "my-novel_draft2.txt").title == "My Novel Draft2"
+    assert parse(PROSE.encode(), "The Lamp at Nine.txt").title == "The Lamp at Nine"
+    assert parse(PROSE.encode(), "2024-03.txt").title is None
+    assert parse(PROSE.encode(), None).title is None
