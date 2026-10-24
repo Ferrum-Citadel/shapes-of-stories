@@ -2,6 +2,7 @@ import asyncio
 
 import pytest
 from asgi_lifespan import LifespanManager
+from httpx import ASGITransport, AsyncClient
 
 from tests import conftest
 
@@ -72,3 +73,18 @@ async def test_sessions_per_connection_are_limited_per_day(client, monkeypatch):
     assert [(await client.post("/api/session")).status_code for _ in range(2)] == [201, 201]
     r = await client.post("/api/session")
     assert r.status_code == 429 and r.json()["detail"]["bucket"] == "sessions"
+
+
+async def test_the_visitor_address_comes_from_the_edge_header_when_one_is_named(pool, monkeypatch):
+    from app import config
+    from app.main import create_app
+
+    monkeypatch.setattr(config, "IP_SESSIONS_PER_DAY", 1)
+    a = create_app(conftest.test_settings(client_ip_header="CF-Connecting-IP"), start_worker=False)
+    async with LifespanManager(a):
+        async with AsyncClient(transport=ASGITransport(app=a), base_url="http://test") as c:
+            codes = [
+                (await c.post("/api/session", headers={"CF-Connecting-IP": ip})).status_code
+                for ip in ("203.0.113.1", "203.0.113.2", "203.0.113.2")
+            ]
+    assert codes == [201, 201, 429]

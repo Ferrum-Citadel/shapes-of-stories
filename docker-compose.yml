@@ -10,6 +10,7 @@ services:
       CORS_ORIGINS: http://localhost:8000
       STATIC_DIR: /app/static
       FORWARDED_ALLOW_IPS: ${FORWARDED_ALLOW_IPS:?FORWARDED_ALLOW_IPS must name the proxy address}
+      CLIENT_IP_HEADER: ${CLIENT_IP_HEADER:-}
     depends_on:
       db: { condition: service_healthy }
     restart: unless-stopped

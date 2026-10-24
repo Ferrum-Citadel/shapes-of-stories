@@ -13,6 +13,10 @@ def get_pool(request: Request):
 
 
 def client_ip(request: Request) -> str:
+    # Behind an edge proxy the visitor is the header the edge overwrites, not the hop before us.
+    header = request.app.state.settings.client_ip_header
+    if header and (ip := request.headers.get(header)):
+        return ip
     return request.client.host if request.client else "unknown"
 
 
