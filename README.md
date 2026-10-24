@@ -5,7 +5,9 @@
 <p align="center">
   <a href="https://github.com/Ferrum-Citadel/shapes-of-stories/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Ferrum-Citadel/shapes-of-stories/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://scorecard.dev/viewer/?uri=github.com/Ferrum-Citadel/shapes-of-stories"><img alt="OpenSSF Scorecard" src="https://api.scorecard.dev/projects/github.com/Ferrum-Citadel/shapes-of-stories/badge"></a>
-  <a href="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories"><img alt="codecov" src="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories/graph/badge.svg"></a>
+  <a href="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories" > 
+ <img src="https://codecov.io/gh/Ferrum-Citadel/shapes-of-stories/graph/badge.svg?token=1JLFV7C411"/> 
+ </a>
   <a href="LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 </p>
 
