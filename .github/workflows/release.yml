@@ -35,7 +35,7 @@ jobs:
           CF_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
           CF_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
         run: |
-          code=$(curl -sS -m 60 -o resp.json -w '%{http_code}' \
+          code=$(curl -sS -m 60 -X POST -o resp.json -w '%{http_code}' \
             -H "CF-Access-Client-Id: $CF_ID" -H "CF-Access-Client-Secret: $CF_SECRET" \
             -H "Authorization: Bearer $COOLIFY_TOKEN" \
             "https://coolify.ferrum-citadel.dev/api/v1/deploy?uuid=y3bjw6fiopqlb4xaeb5mweqj&force=false")
