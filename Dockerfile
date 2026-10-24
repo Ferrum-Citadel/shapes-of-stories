@@ -1,5 +1,5 @@
 # Stage 1: build the SPA (same-origin API for self-hosting)
-FROM node:24-alpine AS web
+FROM node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53 AS web
 WORKDIR /web
 COPY frontend/package*.json ./
 RUN npm ci
@@ -8,9 +8,10 @@ ENV VITE_API_BASE=""
 RUN npm run build
 
 # Stage 2: API + worker + static fallback
-FROM python:3.14-slim AS app
+FROM python:3.14-slim@sha256:0514bc76712d64f8bb48adcb95b1ab0d88c69fee95d62fe4c18ee948bee9b1e1 AS app
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 UV_COMPILE_BYTECODE=1
-RUN pip install --no-cache-dir uv==0.11.29 && useradd -m -u 10001 sos
+COPY --from=ghcr.io/astral-sh/uv:0.11.29@sha256:eb2843a1e56fd9e30c7276ce1a52cba86e64c7b385f5e3279a0e08e02dd058fc /uv /usr/local/bin/uv
+RUN useradd -m -u 10001 sos
 WORKDIR /app
 COPY backend/pyproject.toml backend/uv.lock ./
 RUN uv sync --frozen --no-dev

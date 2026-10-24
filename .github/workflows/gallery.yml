@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       only: { description: "space-separated slugs (empty = all)", required: false, default: "" }
+permissions: {}
 concurrency: { group: gallery, cancel-in-progress: false }
 jobs:
   build:

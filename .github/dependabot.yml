@@ -18,3 +18,7 @@ updates:
     groups:
       minor-and-patch: { patterns: ["*"], update-types: [minor, patch] }
     commit-message: { prefix: ci }
+  - package-ecosystem: docker
+    directory: /
+    schedule: { interval: weekly }
+    commit-message: { prefix: build }
