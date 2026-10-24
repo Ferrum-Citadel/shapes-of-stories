@@ -8,6 +8,8 @@ async def test_spa_fallback(pool, tmp_path):
     (tmp_path / "assets").mkdir()
     (tmp_path / "assets" / "a.js").write_text("console.log(1)")
     (tmp_path / "index.html").write_text("<html>app</html>")
+    (tmp_path / "fonts").mkdir()
+    (tmp_path / "fonts" / "f.woff2").write_bytes(b"wOF2")
     (tmp_path / "gallery" / "answers").mkdir(parents=True)
     (tmp_path / "gallery" / "answers" / "tiny.json").write_text("{}")
     from app.main import create_app
@@ -20,6 +22,9 @@ async def test_spa_fallback(pool, tmp_path):
         asset = await c.get("/assets/a.js")
         assert asset.text == "console.log(1)"
         assert asset.headers["x-content-type-options"] == "nosniff"
+        assert asset.headers["cache-control"] == "public, max-age=31536000, immutable"
+        font = await c.get("/fonts/f.woff2")
+        assert font.headers["cache-control"] == "public, max-age=604800"
         answers = await c.get("/gallery/answers/tiny.json")
         assert answers.text == "{}"
         assert answers.headers["cache-control"] == "public, max-age=0, must-revalidate"
@@ -28,6 +33,7 @@ async def test_spa_fallback(pool, tmp_path):
             r = await c.get(url)
             assert r.status_code == 200
             assert "app" in r.text
+            assert r.headers["cache-control"] == "no-cache"
             assert r.headers["x-content-type-options"] == "nosniff"
             assert r.headers["referrer-policy"] == "strict-origin-when-cross-origin"
             assert r.headers["permissions-policy"] == "camera=(), microphone=(), geolocation=()"

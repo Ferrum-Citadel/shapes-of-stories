@@ -20,5 +20,5 @@ COPY --from=web /web/dist /app/static
 ENV PATH="/app/.venv/bin:$PATH" STATIC_DIR=/app/static PORT=8000
 USER sos
 EXPOSE 8000
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD python -c "import os,urllib.request,sys; p=os.environ.get('PORT','8000'); sys.exit(0 if urllib.request.urlopen(f'http://127.0.0.1:{p}/api/health', timeout=4).status==200 else 1)"
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 CMD python -c "import os,urllib.request,sys; p=os.environ.get('PORT','8000'); sys.exit(0 if urllib.request.urlopen(f'http://127.0.0.1:{p}/api/health', timeout=4).status==200 else 1)"
 CMD ["python", "-m", "app"]

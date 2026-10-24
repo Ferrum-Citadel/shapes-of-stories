@@ -28,10 +28,12 @@ from app.sweeper import sweep_loop
 from app.worker import Worker
 
 
-class NosniffStaticFiles(StaticFiles):
+class AssetFiles(StaticFiles):
     def file_response(self, *args, **kwargs):
         response = super().file_response(*args, **kwargs)
         response.headers["X-Content-Type-Options"] = "nosniff"
+        # Vite hashes every asset name, so a file never changes under its URL.
+        response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
         return response
 
 
@@ -93,10 +95,11 @@ def create_app(settings: Settings, *, start_worker: bool = True) -> FastAPI:
 
     if settings.static_dir and Path(settings.static_dir).is_dir():
         static = Path(settings.static_dir).resolve()
-        app.mount("/assets", NosniffStaticFiles(directory=static / "assets"), name="assets")
+        app.mount("/assets", AssetFiles(directory=static / "assets"), name="assets")
         index = static / "index.html"
         # Same values as frontend/public/_headers.
         index_headers = {
+            "Cache-Control": "no-cache",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
@@ -121,6 +124,8 @@ def create_app(settings: Settings, *, start_worker: bool = True) -> FastAPI:
                 if path.startswith("gallery/"):
                     # Matches frontend/public/_headers, so readers see a rebuilt gallery at once.
                     headers["Cache-Control"] = "public, max-age=0, must-revalidate"
+                elif path.startswith("fonts/"):
+                    headers["Cache-Control"] = "public, max-age=604800"
                 return FileResponse(candidate, headers=headers)
             return FileResponse(index, headers=index_headers)
 
