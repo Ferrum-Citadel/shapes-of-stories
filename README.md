@@ -61,7 +61,7 @@ cp .env.example .env   # SERVER_SECRET: 32 random bytes, base64. JEV_MODE=live
 docker compose up
 ```
 
-Open http://localhost:8000. One image serves the frontend and the API together, and every push to `main` that passes CI publishes it as `ghcr.io/ferrum-citadel/shapes-of-stories:main`. Visitors bring their own TypeSafe key in the browser; the server never holds one. Rebuilding the gallery is a separate command with its own key, see [docs/gallery.md](docs/gallery.md). Behind a reverse proxy or tunnel, set `FORWARDED_ALLOW_IPS` in `.env` to the Compose network's subnet so the per-address upload limit counts visitors rather than the proxy; behind Cloudflare, set `CLIENT_IP_HEADER=CF-Connecting-IP` instead.
+Open http://localhost:8000. One image serves the frontend and the API together, and every GitHub release publishes it as `ghcr.io/ferrum-citadel/shapes-of-stories` tagged with the version and `latest`. Visitors bring their own TypeSafe key in the browser; the server never holds one. Rebuilding the gallery is a separate command with its own key, see [docs/gallery.md](docs/gallery.md). Behind a reverse proxy or tunnel, set `FORWARDED_ALLOW_IPS` in `.env` to the Compose network's subnet so the per-address upload limit counts visitors rather than the proxy; behind Cloudflare, set `CLIENT_IP_HEADER=CF-Connecting-IP` instead.
 
 <details>
 <summary><strong>Develop</strong></summary>
